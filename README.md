@@ -187,7 +187,7 @@ post-discharge-ai-assistant/
 
 > **Project Maintainer :** [Atish Kumar Sharma – IIIT Lucknow]
 
-- Email: atish.sharma7321@gmail.com.com
+- Email: atish.sharma7321@gmail.com
 - LinkedIn: [Atish-Kr-Sharma](https://www.linkedin.com/in/atish-kr-sharma-85a2972a7/)
 - GitHub: [Atish019](https://github.com/Atish019)
 
