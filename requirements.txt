@@ -1,0 +1,29 @@
+# Step 1: Core basics (install first)
+python-dotenv
+pydantic
+
+# Step 2: LangChain ecosystem (install second)
+langchain
+langchain-community
+langgraph
+
+# Step 3: Groq
+groq
+
+# Step 4: Embeddings & Vector DB
+sentence-transformers
+chromadb
+
+# Step 5: PDF Processing (sabse simple)
+pypdf
+
+# Step 6: Data handling
+pandas
+faker
+
+# Step 7: Frontend
+streamlit
+
+# Step 8: Utilities
+requests
+tavily-python
