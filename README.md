@@ -1,15 +1,41 @@
-# 🏥 Post-Discharge Medical AI Assistant
+---
+title: Post-Discharge Medical AI Assistant
+emoji: 🏥
+colorFrom: indigo
+colorTo: purple
+sdk: docker
+app_file: Dockerfile
+app_port: 8000
+pinned: false
+license: apache-2.0
+---
 
 
-> **An intelligent multi-agent AI system for post-discharge patient care powered by LangGraph, Groq LLM, and RAG (Retrieval-Augmented Generation)**
+# **🏥 Post-Discharge Medical AI Assistant**
+
+
+> **A production-ready multi-agent medical AI system for post-discharge patient care using FastAPI, LangGraph, RAG, and Web Search**
 
 
 The **Post-Discharge Medical AI Assistant** is a sophisticated multi-agent conversational AI system designed to support patients during their post-discharge recovery period. Built with state-of-the-art technologies including LangGraph for agent orchestration and Groq's lightning-fast LLM inference, this system demonstrates how AI can enhance patient care through intelligent information retrieval and personalized medical guidance.
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
-[![Groq](https://img.shields.io/badge/LLM-Groq-green.svg)](https://groq.com/)
-[![LangGraph](https://img.shields.io/badge/Framework-LangGraph-orange.svg)](https://github.com/langchain-ai/langgraph)
+[![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688.svg)](https://fastapi.tiangolo.com/)
+[![LangGraph](https://img.shields.io/badge/LangGraph-Multi--Agent-orange.svg)](https://github.com/langchain-ai/langgraph)
+[![Groq](https://img.shields.io/badge/LLM-Groq_LLaMA_3-green.svg)](https://groq.com/)
+[![RAG](https://img.shields.io/badge/RAG-ChromaDB-blueviolet.svg)](https://www.trychroma.com/)
+[![SQLite](https://img.shields.io/badge/Database-SQLite-003B57.svg)](https://www.sqlite.org/)
+[![Tavily](https://img.shields.io/badge/Web_Search-Tavily_API-black.svg)](https://tavily.com/)
+[![HTML](https://img.shields.io/badge/Frontend-HTML5-E34F26.svg)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS](https://img.shields.io/badge/Style-CSS3-1572B6.svg)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/Logic-JavaScript-F7DF1E.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Docker](https://img.shields.io/badge/Deployment-Docker-2496ED.svg)](https://www.docker.com/)
+[![License](https://img.shields.io/badge/License-Apache--2.0-lightgrey.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
+
+##  Application Demo (Real-Time Inference)
+
+![App Demo](frontend/assets/app.png)
 
 
 ##  Overview
@@ -21,7 +47,11 @@ This **Proof of Concept (POC)** system demonstrates a multi-agent AI architectur
 - **Real-time Web Search** for latest medical research
 - **Patient Data Management** with SQLite
 - **Comprehensive Logging** of all interactions
+- **FastAPI backend + modern web frontend**
+- **Docker & Hugging Face deployment readiness**
 
+⚠️ Educational & Demonstration Purpose Only
+This system does NOT replace professional medical advice.
 
 
 ##  Features
@@ -36,14 +66,14 @@ This **Proof of Concept (POC)** system demonstrates a multi-agent AI architectur
 
 2. **Clinical AI Agent**
    - Answers medical questions using RAG
-   - Searches 9706+ medical knowledge chunks
+   - Searches 9633+ medical knowledge chunks
    - Uses web search for latest research
    - Provides evidence-based answers with citations
 
 ###  **RAG Implementation**
 
 - **Knowledge Base**: Comprehensive Clinical Nephrology (1547 pages)
-- **Vector Store**: ChromaDB with 9706 chunks
+- **Vector Store**: ChromaDB with 9633 chunks
 - **Embeddings**: HuggingFace (all-MiniLM-L6-v2)
 - **Semantic Search**: Top-K retrieval with citations
 
@@ -68,105 +98,65 @@ This **Proof of Concept (POC)** system demonstrates a multi-agent AI architectur
 
 ---
 
-##  System Architecture
+##  **System Architecture**
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Streamlit Frontend                       │
-│                  (User Interface Layer)                     │
-└──────────────────────┬──────────────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────────────┐
-│              LangGraph Orchestrator                         │
-│           (Multi-Agent Coordination)                        │
-└─────┬────────────────────────────────────┬─────────────────┘
-      │                                    │
-┌─────▼─────────────┐           ┌─────────▼────────────────┐
-│ Receptionist Agent│           │   Clinical AI Agent      │
-│                   │           │                          │
-│ - Patient Greeting│           │ - Medical Q&A            │
-│ - Data Retrieval  │           │ - RAG Search             │
-│ - Query Routing   │           │ - Web Search             │
-└─────┬─────────────┘           └──────────┬───────────────┘
-      │                                    │
-┌─────▼─────────────────────────────────────▼───────────────┐
-│                    Agent Tools Layer                       │
-│                                                            │
-│  ┌──────────────┐  ┌──────────────┐  ┌─────────────────┐│
-│  │   Patient    │  │     RAG      │  │   Web Search    ││
-│  │   Database   │  │  Retriever   │  │     Tool        ││
-│  └──────────────┘  └──────────────┘  └─────────────────┘│
-└────────────────────────────────────────────────────────────┘
-      │                     │                      │
-┌─────▼──────┐    ┌────────▼────────┐    ┌───────▼────────┐
-│  SQLite    │    │   ChromaDB      │    │  Tavily API    │
-│  (30 pts)  │    │ (9706 chunks)   │    │ (Web Search)   │
-└────────────┘    └─────────────────┘    └────────────────┘
-```
+![Post-Discharge Medical AI Assistant Architecture](frontend/assets/post-discharge-architecture.png)
+
+This architecture illustrates the complete end-to-end flow of the **Post-Discharge Medical AI Assistant**.
 
 
-## Usage
 
-### **Run the Application**
-
-```bash
-streamlit run frontend/streamlit_app.py
-```
-
-The app will open in your browser at `http://localhost:8501`
 
 ### **Using the System**
 
-1. **Start Conversation**: System greets you
-2. **Provide Name**: Enter patient name (e.g., "Adam King")
-3. **Ask Questions**: 
-   - General: "How should I take my medications?"
-   - Medical: "I have leg swelling, is this normal?"
-4. **Get Responses**: 
-   - Receptionist handles general queries
-   - Clinical Agent handles medical questions with RAG
+- **User:** Hello
+- **Bot:** Hello! I'm your post-discharge care assistant. What's your name?
+
+- **User:** John Smith
+- **Bot:**  Discharge Report Found
+     - Diagnosis: Nephrotic Syndrome
+     - Medications: Lisinopril, Furosemide
+     - Follow-up: Nephrology clinic in 14 days
+
+- **User:** I have swelling in my legs
+- **Bot (Clinical Agent):**
+     This can occur in nephrotic syndrome...
+     **[ RAG-based answer with citations ]**
+
+- **User:** Latest research on my condition
+- **Bot:**
+      Based on recent medical research...
+     **[ Web search results ]**
 
 
 ##  Project Structure
 
 ```
-post-discharge-ai-assistant/
-├── README.md
-├── requirements.txt
-├── .env
-├── config/
-│   ├── __init__.py
-│   └── settings.py                 # Configuration
+post-discharge-medical-ai-assistant/
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── assets/
+├── src/
+│   ├── api/
+│   │   └── main.py
+│   ├── agents/
+│   │   ├── receptionist_agent.py
+│   │   ├── clinical_agent.py
+│   │   └── agent_tools.py
+│   ├── orchestration/
+│   │   └── multi_agent_graph.py
+│   ├── rag/
+│   ├── embeddings/
+│   └── utils/
 ├── data/
 │   ├── patients/
-│   │   ├── patients.json           # 30 patient reports
-│   │   └── patients.db             # SQLite database
 │   ├── reference_materials/
-│   │   ├── comprehensive-clinical-nephrology.pdf
-│   │   └── processed/
-│   │       └── chunks.json         # Processed chunks
 │   └── vector_store/
-│       └── chroma_db/              # Vector embeddings
-├── src/
-│   ├── agents/
-│   │   ├── receptionist_agent.py   # Receptionist
-│   │   ├── clinical_agent.py       # Clinical expert
-│   │   └── agent_tools.py          # Tools (DB, RAG, Search)
-│   ├── data_preparation/
-│   │   ├── patient_data_generator.py
-│   │   └── pdf_processor.py
-│   ├── llm/
-│   │   └── groq_client.py          # Groq API wrapper
-│   ├── orchestration/
-│   │   └── multi_agent_graph.py    # LangGraph workflow
-│   └── utils/
-│       └── logger.py               # Logging system
-├── frontend/
-│   └── streamlit_app.py            # UI
-└── logs/
-    ├── interactions/
-    ├── agent_decisions/
-    └── system/
+├── requirements.txt
+├── Dockerfile
+└── README.md
 ```
 
 
@@ -192,4 +182,4 @@ post-discharge-ai-assistant/
 - GitHub: [Atish019](https://github.com/Atish019)
 
 
-**Built with  using Groq, LangGraph, ChromaDB & Streamlit**
+**Built with  using Groq, LangGraph, ChromaDB, FastAPI [Backend] & Frontend [HTML + CSS + JS]**
