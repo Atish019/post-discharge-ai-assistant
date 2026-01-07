@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background:
+        linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.75)),
+        url("/static/assets/bg-medical-ai.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 32px;
+    color: white;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+}
+
+/* Main */
+.app-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.chat-container {
+    width: 420px;
+    background: rgba(255,255,255,0.88);
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Chat Header */
+.chat-header {
+    padding: 18px;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    color: white;
+    border-radius: 18px 18px 0 0;
+}
+
+/* Messages */
+.chat-box {
+    padding: 16px;
+    height: 360px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 12px;
+    max-width: 80%;
+}
+
+.user {
+    align-self: flex-end;
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+    border-radius: 12px 12px 4px 12px;
+}
+
+.bot {
+    align-self: flex-start;
+    background: #f1f5f9;
+    padding: 12px;
+    border-radius: 12px 12px 12px 4px;
+}
+
+/* Typing */
+.typing {
+    display: none;
+    font-size: 12px;
+    padding-left: 16px;
+    color: gray;
+}
+
+/* Input */
+.input-area {
+    display: flex;
+    gap: 6px;
+    padding: 12px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+}
+
+/* Quick actions */
+.quick-actions {
+    display: flex;
+    gap: 6px;
+    padding: 0 12px 12px;
+}
+
+.quick-actions button {
+    background: #e2e8f0;
+    color: black;
+    font-size: 12px;
+}
+
+/* Footer */
+.footer {
+    font-size: 11px;
+    text-align: center;
+    padding: 12px;
+    background: #fef3c7;
+}
+
+.new-session {
+    margin-top: 6px;
+    background: #ef4444;
+}

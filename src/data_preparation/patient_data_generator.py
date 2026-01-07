@@ -6,14 +6,22 @@ Generates 25+ realistic dummy post-discharge patient reports for nephrology case
 import json
 import random
 from datetime import datetime, timedelta
-from faker import Faker
-import sqlite3
 from pathlib import Path
 
-# Initialize Faker
-fake = Faker()
+# Patient names
+PATIENT_NAMES = [
+    "John Smith", "Emily Brown", "Michael Johnson", "Sarah Wilson",
+    "David Miller", "Sophia Taylor", "Daniel Anderson", "Olivia Thomas",
+    "James Jackson", "Emma White", "Robert Harris", "Ava Martin",
+    "William Thompson", "Isabella Garcia", "Joseph Martinez",
+    "Mia Robinson", "Charles Clark", "Amelia Rodriguez",
+    "Thomas Lewis", "Charlotte Lee", "Christopher Walker",
+    "Harper Hall", "Anthony Allen", "Evelyn Young", "Andrew King",
+    "Matthew Scott", "Abigail Green", "Ryan Adams", "Elizabeth Baker",
+    "Joshua Nelson", "Sofia Carter"
+]
 
-# Nephrology-specific data
+# Nephrology diagnoses
 DIAGNOSES = [
     "Chronic Kidney Disease Stage 3",
     "Chronic Kidney Disease Stage 4",
@@ -29,13 +37,34 @@ DIAGNOSES = [
     "Urinary Tract Infection with AKI",
 ]
 
+# Medications by category
 MEDICATIONS = {
-    "CKD": ["Lisinopril 10mg daily", "Furosemide 20mg twice daily", "Sodium bicarbonate 650mg TID"],
-    "HTN": ["Amlodipine 5mg daily", "Losartan 50mg daily", "Metoprolol 25mg BID"],
-    "Diabetes": ["Metformin 500mg BID", "Insulin glargine 20 units at bedtime"],
-    "Edema": ["Furosemide 40mg daily", "Spironolactone 25mg daily"],
-    "Anemia": ["Erythropoietin 4000 units weekly", "Iron supplement 325mg daily"],
-    "Bone": ["Calcium carbonate 500mg TID", "Vitamin D3 1000 IU daily"],
+    "CKD": [
+        "Lisinopril 10mg daily",
+        "Furosemide 20mg twice daily",
+        "Sodium bicarbonate 650mg TID"
+    ],
+    "HTN": [
+        "Amlodipine 5mg daily",
+        "Losartan 50mg daily",
+        "Metoprolol 25mg BID"
+    ],
+    "Diabetes": [
+        "Metformin 500mg BID",
+        "Insulin glargine 20 units at bedtime"
+    ],
+    "Edema": [
+        "Furosemide 40mg daily",
+        "Spironolactone 25mg daily"
+    ],
+    "Anemia": [
+        "Erythropoietin 4000 units weekly",
+        "Iron supplement 325mg daily"
+    ],
+    "Bone": [
+        "Calcium carbonate 500mg TID",
+        "Vitamin D3 1000 IU daily"
+    ]
 }
 
 DIETARY_RESTRICTIONS = [
@@ -62,19 +91,32 @@ DISCHARGE_INSTRUCTIONS = [
     "Low-impact exercise 30 min daily, avoid dehydration",
 ]
 
+DOCTOR_NAMES = [
+    "Dr. Anderson", "Dr. Martinez", "Dr. Thompson", "Dr. Williams",
+    "Dr. Johnson", "Dr. Brown", "Dr. Davis", "Dr. Wilson"
+]
 
-def generate_patient_report(patient_id):
+EMERGENCY_CONTACTS = [
+    ("Mary Smith", "Spouse"), ("John Brown Jr.", "Son"),
+    ("Lisa Johnson", "Daughter"), ("Robert Wilson", "Brother"),
+    ("Susan Miller", "Sister"), ("David Taylor", "Son"),
+    ("Jennifer Anderson", "Daughter"), ("Michael Thomas", "Spouse")
+]
+
+
+def generate_phone():
+    """Generate fake US phone number"""
+    return f"({random.randint(200,999)}) {random.randint(200,999)}-{random.randint(1000,9999)}"
+
+
+def generate_patient_report(patient_id, patient_name):
     """Generate a single patient discharge report"""
-    
-    # Generate basic patient info
-    first_name = fake.first_name()
-    last_name = fake.last_name()
-    full_name = f"{first_name} {last_name}"
     
     # Random discharge date within last 3 months
     discharge_date = datetime.now() - timedelta(days=random.randint(1, 90))
+    admission_date = discharge_date - timedelta(days=random.randint(3, 10))
     
-    # Select diagnosis and related info
+    # Select diagnosis
     diagnosis = random.choice(DIAGNOSES)
     
     # Build medication list based on diagnosis
@@ -101,16 +143,23 @@ def generate_patient_report(patient_id):
         "albumin": round(random.uniform(3.0, 4.2), 1),
     }
     
-    # Follow-up timing
+    # Follow-up
     follow_up_days = random.choice([7, 14, 21, 30])
     follow_up_date = discharge_date + timedelta(days=follow_up_days)
     
+    # Emergency contact
+    ec_name, ec_relation = random.choice(EMERGENCY_CONTACTS)
+    
+    # Generate DOB (35-80 years old)
+    age_days = random.randint(35*365, 80*365)
+    dob = datetime.now() - timedelta(days=age_days)
+    
     report = {
         "patient_id": f"P{patient_id:04d}",
-        "patient_name": full_name,
-        "date_of_birth": fake.date_of_birth(minimum_age=35, maximum_age=80).strftime("%Y-%m-%d"),
+        "patient_name": patient_name,
+        "date_of_birth": dob.strftime("%Y-%m-%d"),
         "gender": random.choice(["Male", "Female"]),
-        "admission_date": (discharge_date - timedelta(days=random.randint(3, 10))).strftime("%Y-%m-%d"),
+        "admission_date": admission_date.strftime("%Y-%m-%d"),
         "discharge_date": discharge_date.strftime("%Y-%m-%d"),
         "primary_diagnosis": diagnosis,
         "secondary_diagnoses": random.sample(
@@ -123,27 +172,28 @@ def generate_patient_report(patient_id):
         "follow_up": f"Nephrology clinic on {follow_up_date.strftime('%Y-%m-%d')} ({follow_up_days} days)",
         "warning_signs": random.choice(WARNING_SIGNS),
         "discharge_instructions": random.choice(DISCHARGE_INSTRUCTIONS),
-        "attending_physician": f"Dr. {fake.last_name()}",
-        "contact_number": fake.phone_number(),
+        "attending_physician": random.choice(DOCTOR_NAMES),
+        "contact_number": generate_phone(),
         "emergency_contact": {
-            "name": fake.name(),
-            "relationship": random.choice(["Spouse", "Son", "Daughter", "Sibling"]),
-            "phone": fake.phone_number(),
+            "name": ec_name,
+            "relationship": ec_relation,
+            "phone": generate_phone()
         }
     }
     
     return report
 
 
-def generate_all_patients(num_patients=30):
-    """Generate multiple patient reports"""
+def generate_all_patients():
+    """Generate all patient reports"""
     patients = []
     
-    print(f"Generating {num_patients} patient reports...")
-    for i in range(1, num_patients + 1):
-        patient = generate_patient_report(i)
+    print(f" Generating {len(PATIENT_NAMES)} patient reports...\n")
+    
+    for i, name in enumerate(PATIENT_NAMES, start=1):
+        patient = generate_patient_report(i, name)
         patients.append(patient)
-        print(f"  Generated: {patient['patient_name']} - {patient['primary_diagnosis']}")
+        print(f"   {i:2d}. {patient['patient_name']:25s} - {patient['primary_diagnosis']}")
     
     return patients
 
@@ -158,96 +208,32 @@ def save_to_json(patients, filepath="data/patients/patients.json"):
     print(f"\n Saved {len(patients)} patients to {filepath}")
 
 
-def save_to_sqlite(patients, db_path="data/patients/patients.db"):
-    """Save patient reports to SQLite database"""
-    Path(db_path).parent.mkdir(parents=True, exist_ok=True)
-    
-    conn = sqlite3.connect(db_path)
-    cursor = conn.cursor()
-    
-    # Create table
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS patients (
-            patient_id TEXT PRIMARY KEY,
-            patient_name TEXT NOT NULL,
-            date_of_birth TEXT,
-            gender TEXT,
-            admission_date TEXT,
-            discharge_date TEXT,
-            primary_diagnosis TEXT,
-            secondary_diagnoses TEXT,
-            medications TEXT,
-            lab_values TEXT,
-            dietary_restrictions TEXT,
-            follow_up TEXT,
-            warning_signs TEXT,
-            discharge_instructions TEXT,
-            attending_physician TEXT,
-            contact_number TEXT,
-            emergency_contact TEXT
-        )
-    ''')
-    
-    # Insert patients
-    for patient in patients:
-        cursor.execute('''
-            INSERT OR REPLACE INTO patients VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        ''', (
-            patient['patient_id'],
-            patient['patient_name'],
-            patient['date_of_birth'],
-            patient['gender'],
-            patient['admission_date'],
-            patient['discharge_date'],
-            patient['primary_diagnosis'],
-            json.dumps(patient['secondary_diagnoses']),
-            json.dumps(patient['medications']),
-            json.dumps(patient['lab_values']),
-            patient['dietary_restrictions'],
-            patient['follow_up'],
-            patient['warning_signs'],
-            patient['discharge_instructions'],
-            patient['attending_physician'],
-            patient['contact_number'],
-            json.dumps(patient['emergency_contact'])
-        ))
-    
-    conn.commit()
-    conn.close()
-    
-    print(f" Saved {len(patients)} patients to SQLite: {db_path}")
-
-
 def print_sample_report(patients, num_samples=2):
-    """Print sample patient reports for verification"""
+    """Print sample patient reports"""
     print("\n" + "="*80)
-    print("SAMPLE PATIENT REPORTS")
+    print(" SAMPLE PATIENT REPORTS")
     print("="*80)
     
     for patient in patients[:num_samples]:
         print(f"\n Patient: {patient['patient_name']} ({patient['patient_id']})")
-        print(f"   Diagnosis: {patient['primary_diagnosis']}")
-        print(f"   Discharge Date: {patient['discharge_date']}")
-        print(f"   Medications: {len(patient['medications'])} prescribed")
-        print(f"   Follow-up: {patient['follow_up']}")
+        print(f"    Diagnosis: {patient['primary_diagnosis']}")
+        print(f"    Discharge: {patient['discharge_date']}")
+        print(f"    Medications: {len(patient['medications'])} prescribed")
+        print(f"    Follow-up: {patient['follow_up']}")
+        print(f"    Creatinine: {patient['lab_values']['creatinine']} mg/dL")
 
 
 if __name__ == "__main__":
-    # Generate 30 patients (more than required 25)
-    patients = generate_all_patients(num_patients=30)
+    print("\n" + "="*80)
+    print(" POST-DISCHARGE PATIENT DATA GENERATOR")
+    print("="*80 + "\n")
     
-    # Save to both JSON and SQLite
+    # Generate patients
+    patients = generate_all_patients()
+    
+    # Save to JSON
     save_to_json(patients)
-    save_to_sqlite(patients)
     
     # Print samples
     print_sample_report(patients)
     
-    print("\n" + "="*80)
-    print(" PATIENT DATA GENERATION COMPLETE!")
-    print("="*80)
-    print(f"Total Patients: {len(patients)}")
-    print("Files Created:")
-    print("  - data/patients/patients.json")
-    print("  - data/patients/patients.db")
-    print("\nNext Step: Process the nephrology PDF for RAG")

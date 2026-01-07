@@ -1,800 +1,936 @@
 [
   {
     "patient_id": "P0001",
-    "patient_name": "Mark Yu",
-    "date_of_birth": "1948-07-09",
-    "gender": "Female",
-    "admission_date": "2025-09-27",
-    "discharge_date": "2025-10-02",
-    "primary_diagnosis": "Urinary Tract Infection with AKI",
+    "patient_name": "John Smith",
+    "date_of_birth": "1986-06-08",
+    "gender": "Male",
+    "admission_date": "2025-10-10",
+    "discharge_date": "2025-10-15",
+    "primary_diagnosis": "Nephrotic Syndrome",
     "secondary_diagnoses": [
-      "Type 2 Diabetes",
+      "Hyperkalemia",
       "Anemia",
-      "Hyperkalemia"
+      "Metabolic Acidosis"
     ],
     "medications": [
-      "Sodium bicarbonate 650mg TID",
+      "Furosemide 20mg twice daily",
       "Lisinopril 10mg daily"
     ],
     "lab_values": {
-      "creatinine": 3.7,
+      "creatinine": 3.1,
       "egfr": 30,
       "potassium": 4.9,
-      "hemoglobin": 10.4,
-      "albumin": 3.8
+      "hemoglobin": 9.7,
+      "albumin": 3.4
     },
-    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
-    "follow_up": "Nephrology clinic on 2025-10-09 (7 days)",
-    "warning_signs": "High fever, severe back pain, unable to urinate",
-    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
-    "attending_physician": "Dr. Mathis",
-    "contact_number": "001-670-596-9993x02818",
+    "dietary_restrictions": "Low sodium (2g/day), fluid restriction (1.5L/day)",
+    "follow_up": "Nephrology clinic on 2025-11-14 (30 days)",
+    "warning_signs": "Chest pain, severe headache, blood in urine",
+    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
+    "attending_physician": "Dr. Thompson",
+    "contact_number": "(990) 613-1627",
     "emergency_contact": {
-      "name": "Kyle Johnson",
-      "relationship": "Spouse",
-      "phone": "+1-622-348-8746x28291"
+      "name": "David Taylor",
+      "relationship": "Son",
+      "phone": "(417) 232-4092"
     }
   },
   {
     "patient_id": "P0002",
-    "patient_name": "Pamela Henry",
-    "date_of_birth": "1975-10-25",
+    "patient_name": "Emily Brown",
+    "date_of_birth": "1946-11-21",
     "gender": "Male",
-    "admission_date": "2025-10-11",
-    "discharge_date": "2025-10-19",
-    "primary_diagnosis": "Chronic Kidney Disease Stage 3",
+    "admission_date": "2025-12-20",
+    "discharge_date": "2025-12-29",
+    "primary_diagnosis": "Nephrotic Syndrome",
     "secondary_diagnoses": [
-      "Hypertension",
-      "Hyperkalemia",
-      "Metabolic Acidosis"
+      "Metabolic Acidosis",
+      "Hypertension"
     ],
     "medications": [
       "Sodium bicarbonate 650mg TID",
-      "Furosemide 20mg twice daily",
-      "Lisinopril 10mg daily",
-      "Losartan 50mg daily",
-      "Iron supplement 325mg daily"
+      "Lisinopril 10mg daily"
     ],
     "lab_values": {
-      "creatinine": 2.8,
-      "egfr": 33,
-      "potassium": 3.9,
-      "hemoglobin": 9.8,
-      "albumin": 3.1
+      "creatinine": 4.1,
+      "egfr": 51,
+      "potassium": 5.1,
+      "hemoglobin": 10.3,
+      "albumin": 3.2
     },
-    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
-    "follow_up": "Nephrology clinic on 2025-11-18 (30 days)",
-    "warning_signs": "Chest pain, severe headache, blood in urine",
-    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
+    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
+    "follow_up": "Nephrology clinic on 2026-01-05 (7 days)",
+    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
+    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
     "attending_physician": "Dr. Anderson",
-    "contact_number": "2124392559",
+    "contact_number": "(228) 972-9940",
     "emergency_contact": {
-      "name": "Sarah Jones",
-      "relationship": "Daughter",
-      "phone": "+1-804-543-1745x30879"
+      "name": "Mary Smith",
+      "relationship": "Spouse",
+      "phone": "(761) 482-9526"
     }
   },
   {
     "patient_id": "P0003",
-    "patient_name": "Justin Fleming",
-    "date_of_birth": "1950-07-04",
+    "patient_name": "Michael Johnson",
+    "date_of_birth": "1972-02-26",
     "gender": "Female",
-    "admission_date": "2025-09-10",
-    "discharge_date": "2025-09-16",
-    "primary_diagnosis": "Diabetic Nephropathy",
+    "admission_date": "2025-12-13",
+    "discharge_date": "2025-12-21",
+    "primary_diagnosis": "IgA Nephropathy",
     "secondary_diagnoses": [
-      "Anemia",
-      "Type 2 Diabetes",
-      "Hypertension"
+      "Hypertension",
+      "Hyperkalemia",
+      "Metabolic Acidosis"
     ],
     "medications": [
-      "Insulin glargine 20 units at bedtime",
-      "Metformin 500mg BID",
+      "Sodium bicarbonate 650mg TID",
       "Lisinopril 10mg daily"
     ],
     "lab_values": {
-      "creatinine": 3.4,
-      "egfr": 44,
-      "potassium": 4.6,
-      "hemoglobin": 12.3,
-      "albumin": 3.2
+      "creatinine": 2.4,
+      "egfr": 40,
+      "potassium": 4.1,
+      "hemoglobin": 11.7,
+      "albumin": 3.5
     },
-    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
-    "follow_up": "Nephrology clinic on 2025-10-16 (30 days)",
-    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
+    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
+    "follow_up": "Nephrology clinic on 2026-01-20 (30 days)",
+    "warning_signs": "Chest pain, severe headache, blood in urine",
     "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
-    "attending_physician": "Dr. Watson",
-    "contact_number": "+1-855-820-7206",
+    "attending_physician": "Dr. Johnson",
+    "contact_number": "(641) 652-1135",
     "emergency_contact": {
-      "name": "Crystal Hanna",
-      "relationship": "Son",
-      "phone": "001-658-802-7259x42097"
+      "name": "Michael Thomas",
+      "relationship": "Spouse",
+      "phone": "(261) 462-8355"
     }
   },
   {
     "patient_id": "P0004",
-    "patient_name": "Vanessa Hunt",
-    "date_of_birth": "1966-02-08",
+    "patient_name": "Sarah Wilson",
+    "date_of_birth": "1952-05-04",
     "gender": "Male",
-    "admission_date": "2025-08-24",
-    "discharge_date": "2025-08-29",
-    "primary_diagnosis": "Polycystic Kidney Disease",
+    "admission_date": "2025-11-12",
+    "discharge_date": "2025-11-18",
+    "primary_diagnosis": "Nephrotic Syndrome",
     "secondary_diagnoses": [
-      "Hyperkalemia",
-      "Hypertension"
+      "Hyperkalemia"
     ],
     "medications": [
-      "Furosemide 20mg twice daily",
+      "Sodium bicarbonate 650mg TID",
       "Lisinopril 10mg daily"
     ],
     "lab_values": {
-      "creatinine": 3.9,
-      "egfr": 51,
-      "potassium": 4.7,
-      "hemoglobin": 12.0,
-      "albumin": 3.0
+      "creatinine": 3.1,
+      "egfr": 52,
+      "potassium": 4.8,
+      "hemoglobin": 9.6,
+      "albumin": 4.0
     },
-    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
-    "follow_up": "Nephrology clinic on 2025-09-05 (7 days)",
-    "warning_signs": "High fever, severe back pain, unable to urinate",
-    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
-    "attending_physician": "Dr. Herrera",
-    "contact_number": "218.650.3502x9562",
+    "dietary_restrictions": "Low sodium (2g/day), fluid restriction (1.5L/day)",
+    "follow_up": "Nephrology clinic on 2025-12-09 (21 days)",
+    "warning_signs": "Chest pain, severe headache, blood in urine",
+    "discharge_instructions": "Take all medications as prescribed, attend all follow-up appointments",
+    "attending_physician": "Dr. Wilson",
+    "contact_number": "(890) 689-4326",
     "emergency_contact": {
-      "name": "Kevin Hall",
-      "relationship": "Daughter",
-      "phone": "(309)774-8359x49876"
+      "name": "David Taylor",
+      "relationship": "Son",
+      "phone": "(818) 815-2171"
     }
   },
   {
     "patient_id": "P0005",
-    "patient_name": "Jennifer Larson",
-    "date_of_birth": "1979-03-27",
-    "gender": "Male",
-    "admission_date": "2025-08-25",
-    "discharge_date": "2025-08-30",
+    "patient_name": "David Miller",
+    "date_of_birth": "1975-11-09",
+    "gender": "Female",
+    "admission_date": "2025-10-07",
+    "discharge_date": "2025-10-12",
     "primary_diagnosis": "Hypertensive Nephropathy",
     "secondary_diagnoses": [
-      "Hyperkalemia",
-      "Anemia",
-      "Metabolic Acidosis"
+      "Hypertension",
+      "Type 2 Diabetes"
     ],
     "medications": [
-      "Metoprolol 25mg BID",
       "Losartan 50mg daily",
+      "Amlodipine 5mg daily",
       "Furosemide 20mg twice daily"
     ],
     "lab_values": {
-      "creatinine": 1.6,
-      "egfr": 25,
+      "creatinine": 4.4,
+      "egfr": 58,
       "potassium": 5.0,
-      "hemoglobin": 12.2,
-      "albumin": 3.4
+      "hemoglobin": 11.6,
+      "albumin": 3.8
     },
-    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
-    "follow_up": "Nephrology clinic on 2025-09-06 (7 days)",
-    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
+    "dietary_restrictions": "Low sodium (2g/day), fluid restriction (1.5L/day)",
+    "follow_up": "Nephrology clinic on 2025-10-26 (14 days)",
+    "warning_signs": "High fever, severe back pain, unable to urinate",
     "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
-    "attending_physician": "Dr. Kelly",
-    "contact_number": "767.647.0117",
+    "attending_physician": "Dr. Davis",
+    "contact_number": "(370) 851-1961",
     "emergency_contact": {
-      "name": "Kevin Mills",
-      "relationship": "Spouse",
-      "phone": "757.304.8391x94821"
+      "name": "Susan Miller",
+      "relationship": "Sister",
+      "phone": "(858) 697-3692"
     }
   },
   {
     "patient_id": "P0006",
-    "patient_name": "Blake Barnes",
-    "date_of_birth": "1989-02-13",
+    "patient_name": "Sophia Taylor",
+    "date_of_birth": "1967-11-11",
     "gender": "Female",
-    "admission_date": "2025-08-10",
-    "discharge_date": "2025-08-16",
-    "primary_diagnosis": "IgA Nephropathy",
+    "admission_date": "2025-12-17",
+    "discharge_date": "2025-12-22",
+    "primary_diagnosis": "Hypertensive Nephropathy",
     "secondary_diagnoses": [
       "Metabolic Acidosis",
-      "Hyperkalemia"
+      "Hypertension"
     ],
     "medications": [
-      "Lisinopril 10mg daily",
-      "Sodium bicarbonate 650mg TID"
+      "Losartan 50mg daily",
+      "Amlodipine 5mg daily",
+      "Furosemide 20mg twice daily"
     ],
     "lab_values": {
-      "creatinine": 4.4,
-      "egfr": 50,
-      "potassium": 4.1,
-      "hemoglobin": 10.6,
-      "albumin": 3.1
+      "creatinine": 3.0,
+      "egfr": 53,
+      "potassium": 4.2,
+      "hemoglobin": 12.0,
+      "albumin": 3.7
     },
     "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
-    "follow_up": "Nephrology clinic on 2025-08-30 (14 days)",
+    "follow_up": "Nephrology clinic on 2026-01-12 (21 days)",
     "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
-    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
-    "attending_physician": "Dr. Burns",
-    "contact_number": "778.869.7923x274",
+    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
+    "attending_physician": "Dr. Williams",
+    "contact_number": "(309) 867-9991",
     "emergency_contact": {
-      "name": "Stephanie Thomas",
-      "relationship": "Son",
-      "phone": "766-421-4899x81008"
+      "name": "Lisa Johnson",
+      "relationship": "Daughter",
+      "phone": "(285) 922-8375"
     }
   },
   {
     "patient_id": "P0007",
-    "patient_name": "Richard Rivera",
-    "date_of_birth": "1968-06-03",
-    "gender": "Male",
-    "admission_date": "2025-09-17",
-    "discharge_date": "2025-09-25",
-    "primary_diagnosis": "Chronic Kidney Disease Stage 3",
-    "secondary_diagnoses": [
-      "Metabolic Acidosis",
-      "Anemia"
-    ],
-    "medications": [
-      "Furosemide 20mg twice daily",
-      "Sodium bicarbonate 650mg TID",
-      "Lisinopril 10mg daily",
-      "Amlodipine 5mg daily",
-      "Erythropoietin 4000 units weekly"
-    ],
-    "lab_values": {
-      "creatinine": 2.2,
-      "egfr": 42,
-      "potassium": 4.1,
-      "hemoglobin": 12.4,
-      "albumin": 3.5
-    },
-    "dietary_restrictions": "Low sodium (2g/day), fluid restriction (1.5L/day)",
-    "follow_up": "Nephrology clinic on 2025-10-16 (21 days)",
-    "warning_signs": "Chest pain, severe headache, blood in urine",
-    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
-    "attending_physician": "Dr. Ryan",
-    "contact_number": "443-296-7286",
-    "emergency_contact": {
-      "name": "Clifford Meyer",
-      "relationship": "Son",
-      "phone": "001-777-260-1385x624"
-    }
-  },
-  {
-    "patient_id": "P0008",
-    "patient_name": "John Simmons",
-    "date_of_birth": "1988-05-24",
-    "gender": "Male",
-    "admission_date": "2025-09-16",
-    "discharge_date": "2025-09-20",
-    "primary_diagnosis": "Lupus Nephritis",
-    "secondary_diagnoses": [
-      "Hyperkalemia"
-    ],
-    "medications": [
-      "Lisinopril 10mg daily",
-      "Sodium bicarbonate 650mg TID"
-    ],
-    "lab_values": {
-      "creatinine": 3.4,
-      "egfr": 56,
-      "potassium": 4.4,
-      "hemoglobin": 10.3,
-      "albumin": 3.7
-    },
-    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
-    "follow_up": "Nephrology clinic on 2025-10-20 (30 days)",
-    "warning_signs": "High fever, severe back pain, unable to urinate",
-    "discharge_instructions": "Take all medications as prescribed, attend all follow-up appointments",
-    "attending_physician": "Dr. Hull",
-    "contact_number": "001-366-695-2738",
-    "emergency_contact": {
-      "name": "Casey Copeland",
-      "relationship": "Daughter",
-      "phone": "001-632-934-7452"
-    }
-  },
-  {
-    "patient_id": "P0009",
-    "patient_name": "Michael Beltran",
-    "date_of_birth": "1986-07-24",
-    "gender": "Male",
-    "admission_date": "2025-10-05",
-    "discharge_date": "2025-10-08",
-    "primary_diagnosis": "Chronic Kidney Disease Stage 3",
-    "secondary_diagnoses": [
-      "Hyperkalemia",
-      "Type 2 Diabetes",
-      "Anemia"
-    ],
-    "medications": [
-      "Lisinopril 10mg daily",
-      "Sodium bicarbonate 650mg TID",
-      "Metoprolol 25mg BID",
-      "Iron supplement 325mg daily"
-    ],
-    "lab_values": {
-      "creatinine": 4.5,
-      "egfr": 38,
-      "potassium": 5.1,
-      "hemoglobin": 10.1,
-      "albumin": 3.1
-    },
-    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
-    "follow_up": "Nephrology clinic on 2025-10-29 (21 days)",
-    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
-    "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
-    "attending_physician": "Dr. Fernandez",
-    "contact_number": "6955509910",
-    "emergency_contact": {
-      "name": "Timothy Richardson",
-      "relationship": "Daughter",
-      "phone": "001-282-314-3211x8897"
-    }
-  },
-  {
-    "patient_id": "P0010",
-    "patient_name": "Brenda Perry",
-    "date_of_birth": "1973-08-28",
-    "gender": "Male",
-    "admission_date": "2025-08-09",
-    "discharge_date": "2025-08-15",
-    "primary_diagnosis": "Nephrotic Syndrome",
-    "secondary_diagnoses": [
-      "Type 2 Diabetes"
-    ],
-    "medications": [
-      "Sodium bicarbonate 650mg TID",
-      "Furosemide 20mg twice daily"
-    ],
-    "lab_values": {
-      "creatinine": 3.4,
-      "egfr": 56,
-      "potassium": 4.2,
-      "hemoglobin": 11.3,
-      "albumin": 3.8
-    },
-    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
-    "follow_up": "Nephrology clinic on 2025-09-05 (21 days)",
-    "warning_signs": "High fever, severe back pain, unable to urinate",
-    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
-    "attending_physician": "Dr. Johns",
-    "contact_number": "2612751486",
-    "emergency_contact": {
-      "name": "Charles Bowers",
-      "relationship": "Sibling",
-      "phone": "+1-863-881-2566x63899"
-    }
-  },
-  {
-    "patient_id": "P0011",
-    "patient_name": "Adam King",
-    "date_of_birth": "1970-05-18",
-    "gender": "Male",
-    "admission_date": "2025-09-07",
-    "discharge_date": "2025-09-12",
-    "primary_diagnosis": "Lupus Nephritis",
-    "secondary_diagnoses": [
-      "Anemia",
-      "Hypertension",
-      "Type 2 Diabetes"
-    ],
-    "medications": [
-      "Lisinopril 10mg daily",
-      "Sodium bicarbonate 650mg TID"
-    ],
-    "lab_values": {
-      "creatinine": 3.2,
-      "egfr": 31,
-      "potassium": 4.4,
-      "hemoglobin": 10.5,
-      "albumin": 3.6
-    },
-    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
-    "follow_up": "Nephrology clinic on 2025-09-26 (14 days)",
-    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
-    "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
-    "attending_physician": "Dr. Chavez",
-    "contact_number": "583.886.8406x020",
-    "emergency_contact": {
-      "name": "Ronald Campbell",
-      "relationship": "Daughter",
-      "phone": "437.417.5824x899"
-    }
-  },
-  {
-    "patient_id": "P0012",
-    "patient_name": "Katherine Hill",
-    "date_of_birth": "1981-08-24",
+    "patient_name": "Daniel Anderson",
+    "date_of_birth": "1978-06-06",
     "gender": "Female",
-    "admission_date": "2025-08-26",
-    "discharge_date": "2025-09-04",
-    "primary_diagnosis": "Urinary Tract Infection with AKI",
-    "secondary_diagnoses": [
-      "Anemia"
-    ],
-    "medications": [
-      "Sodium bicarbonate 650mg TID",
-      "Furosemide 20mg twice daily"
-    ],
-    "lab_values": {
-      "creatinine": 1.7,
-      "egfr": 43,
-      "potassium": 5.0,
-      "hemoglobin": 12.5,
-      "albumin": 4.0
-    },
-    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
-    "follow_up": "Nephrology clinic on 2025-10-04 (30 days)",
-    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
-    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
-    "attending_physician": "Dr. Harris",
-    "contact_number": "(386)860-4636",
-    "emergency_contact": {
-      "name": "Sara Mathis",
-      "relationship": "Daughter",
-      "phone": "379-707-7243"
-    }
-  },
-  {
-    "patient_id": "P0013",
-    "patient_name": "Jennifer Porter",
-    "date_of_birth": "1975-07-12",
-    "gender": "Male",
-    "admission_date": "2025-10-22",
-    "discharge_date": "2025-10-31",
-    "primary_diagnosis": "Lupus Nephritis",
-    "secondary_diagnoses": [
-      "Hyperkalemia"
-    ],
-    "medications": [
-      "Lisinopril 10mg daily",
-      "Furosemide 20mg twice daily"
-    ],
-    "lab_values": {
-      "creatinine": 3.8,
-      "egfr": 53,
-      "potassium": 4.5,
-      "hemoglobin": 10.5,
-      "albumin": 3.7
-    },
-    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
-    "follow_up": "Nephrology clinic on 2025-11-14 (14 days)",
-    "warning_signs": "High fever, severe back pain, unable to urinate",
-    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
-    "attending_physician": "Dr. Larson",
-    "contact_number": "001-753-656-2410x21654",
-    "emergency_contact": {
-      "name": "Alexandra Gonzalez",
-      "relationship": "Son",
-      "phone": "(294)728-1689x232"
-    }
-  },
-  {
-    "patient_id": "P0014",
-    "patient_name": "Jerry Carroll",
-    "date_of_birth": "1982-04-29",
-    "gender": "Male",
-    "admission_date": "2025-08-25",
-    "discharge_date": "2025-09-01",
-    "primary_diagnosis": "IgA Nephropathy",
-    "secondary_diagnoses": [
-      "Anemia"
-    ],
-    "medications": [
-      "Sodium bicarbonate 650mg TID",
-      "Furosemide 20mg twice daily"
-    ],
-    "lab_values": {
-      "creatinine": 3.4,
-      "egfr": 38,
-      "potassium": 5.1,
-      "hemoglobin": 10.3,
-      "albumin": 3.0
-    },
-    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
-    "follow_up": "Nephrology clinic on 2025-09-22 (21 days)",
-    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
-    "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
-    "attending_physician": "Dr. Campbell",
-    "contact_number": "599-261-1275",
-    "emergency_contact": {
-      "name": "Jennifer Burton",
-      "relationship": "Son",
-      "phone": "683-602-5984"
-    }
-  },
-  {
-    "patient_id": "P0015",
-    "patient_name": "Laura Saunders",
-    "date_of_birth": "1961-07-30",
-    "gender": "Male",
-    "admission_date": "2025-10-05",
-    "discharge_date": "2025-10-13",
-    "primary_diagnosis": "Nephrotic Syndrome",
-    "secondary_diagnoses": [
-      "Metabolic Acidosis",
-      "Hypertension",
-      "Anemia"
-    ],
-    "medications": [
-      "Furosemide 20mg twice daily",
-      "Sodium bicarbonate 650mg TID"
-    ],
-    "lab_values": {
-      "creatinine": 3.7,
-      "egfr": 50,
-      "potassium": 4.8,
-      "hemoglobin": 10.3,
-      "albumin": 3.3
-    },
-    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
-    "follow_up": "Nephrology clinic on 2025-10-20 (7 days)",
-    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
-    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
-    "attending_physician": "Dr. Wood",
-    "contact_number": "001-820-926-8778x02900",
-    "emergency_contact": {
-      "name": "Megan Petersen",
-      "relationship": "Sibling",
-      "phone": "(290)457-1769x48107"
-    }
-  },
-  {
-    "patient_id": "P0016",
-    "patient_name": "Luis Nash",
-    "date_of_birth": "1958-07-31",
-    "gender": "Female",
-    "admission_date": "2025-09-28",
-    "discharge_date": "2025-10-08",
-    "primary_diagnosis": "Hypertensive Nephropathy",
-    "secondary_diagnoses": [
-      "Hypertension",
-      "Type 2 Diabetes"
-    ],
-    "medications": [
-      "Amlodipine 5mg daily",
-      "Losartan 50mg daily",
-      "Sodium bicarbonate 650mg TID"
-    ],
-    "lab_values": {
-      "creatinine": 3.8,
-      "egfr": 29,
-      "potassium": 4.6,
-      "hemoglobin": 9.8,
-      "albumin": 3.6
-    },
-    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
-    "follow_up": "Nephrology clinic on 2025-10-15 (7 days)",
-    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
-    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
-    "attending_physician": "Dr. Allen",
-    "contact_number": "332-687-7848x2522",
-    "emergency_contact": {
-      "name": "Steven Benson",
-      "relationship": "Son",
-      "phone": "415.977.9140"
-    }
-  },
-  {
-    "patient_id": "P0017",
-    "patient_name": "Stacey Martin",
-    "date_of_birth": "1969-09-12",
-    "gender": "Female",
-    "admission_date": "2025-10-27",
-    "discharge_date": "2025-11-02",
-    "primary_diagnosis": "Polycystic Kidney Disease",
-    "secondary_diagnoses": [
-      "Hyperkalemia"
-    ],
-    "medications": [
-      "Sodium bicarbonate 650mg TID",
-      "Lisinopril 10mg daily"
-    ],
-    "lab_values": {
-      "creatinine": 3.8,
-      "egfr": 48,
-      "potassium": 5.0,
-      "hemoglobin": 11.4,
-      "albumin": 3.4
-    },
-    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
-    "follow_up": "Nephrology clinic on 2025-11-16 (14 days)",
-    "warning_signs": "Chest pain, severe headache, blood in urine",
-    "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
-    "attending_physician": "Dr. Knapp",
-    "contact_number": "001-296-502-0878x21323",
-    "emergency_contact": {
-      "name": "Tonya Patrick",
-      "relationship": "Spouse",
-      "phone": "(232)439-1798x8466"
-    }
-  },
-  {
-    "patient_id": "P0018",
-    "patient_name": "Alan Howard",
-    "date_of_birth": "1984-06-15",
-    "gender": "Male",
-    "admission_date": "2025-10-10",
-    "discharge_date": "2025-10-16",
+    "admission_date": "2025-11-08",
+    "discharge_date": "2025-11-14",
     "primary_diagnosis": "Diabetic Nephropathy",
     "secondary_diagnoses": [
-      "Hypertension"
+      "Anemia",
+      "Type 2 Diabetes"
     ],
     "medications": [
       "Metformin 500mg BID",
       "Insulin glargine 20 units at bedtime",
-      "Lisinopril 10mg daily"
-    ],
-    "lab_values": {
-      "creatinine": 3.3,
-      "egfr": 38,
-      "potassium": 4.2,
-      "hemoglobin": 9.9,
-      "albumin": 3.7
-    },
-    "dietary_restrictions": "Low sodium (2g/day), fluid restriction (1.5L/day)",
-    "follow_up": "Nephrology clinic on 2025-11-15 (30 days)",
-    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
-    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
-    "attending_physician": "Dr. Allen",
-    "contact_number": "986-862-2224x91367",
-    "emergency_contact": {
-      "name": "Mark Michael",
-      "relationship": "Sibling",
-      "phone": "463.891.8958x076"
-    }
-  },
-  {
-    "patient_id": "P0019",
-    "patient_name": "Lindsay Frost",
-    "date_of_birth": "1978-12-14",
-    "gender": "Female",
-    "admission_date": "2025-10-10",
-    "discharge_date": "2025-10-14",
-    "primary_diagnosis": "Acute Kidney Injury",
-    "secondary_diagnoses": [
-      "Hypertension",
-      "Hyperkalemia",
-      "Metabolic Acidosis"
-    ],
-    "medications": [
-      "Sodium bicarbonate 650mg TID",
-      "Lisinopril 10mg daily"
-    ],
-    "lab_values": {
-      "creatinine": 4.4,
-      "egfr": 30,
-      "potassium": 4.5,
-      "hemoglobin": 12.0,
-      "albumin": 3.9
-    },
-    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
-    "follow_up": "Nephrology clinic on 2025-10-21 (7 days)",
-    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
-    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
-    "attending_physician": "Dr. Fisher",
-    "contact_number": "971-387-9166x8941",
-    "emergency_contact": {
-      "name": "Hector Davis",
-      "relationship": "Son",
-      "phone": "+1-205-309-8729x55415"
-    }
-  },
-  {
-    "patient_id": "P0020",
-    "patient_name": "Timothy Clark",
-    "date_of_birth": "1982-03-15",
-    "gender": "Female",
-    "admission_date": "2025-08-26",
-    "discharge_date": "2025-09-04",
-    "primary_diagnosis": "Glomerulonephritis",
-    "secondary_diagnoses": [
-      "Type 2 Diabetes",
-      "Hyperkalemia",
-      "Metabolic Acidosis"
-    ],
-    "medications": [
-      "Sodium bicarbonate 650mg TID",
       "Furosemide 20mg twice daily"
     ],
     "lab_values": {
-      "creatinine": 1.9,
-      "egfr": 52,
-      "potassium": 5.1,
-      "hemoglobin": 10.5,
-      "albumin": 3.4
+      "creatinine": 3.0,
+      "egfr": 58,
+      "potassium": 5.2,
+      "hemoglobin": 12.0,
+      "albumin": 3.8
     },
-    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
-    "follow_up": "Nephrology clinic on 2025-09-11 (7 days)",
-    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
-    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
-    "attending_physician": "Dr. Mcneil",
-    "contact_number": "+1-433-285-7729x91749",
+    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
+    "follow_up": "Nephrology clinic on 2025-12-05 (21 days)",
+    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
+    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
+    "attending_physician": "Dr. Martinez",
+    "contact_number": "(590) 272-5987",
     "emergency_contact": {
-      "name": "Matthew Stevenson",
-      "relationship": "Sibling",
-      "phone": "(900)939-3911x086"
+      "name": "Susan Miller",
+      "relationship": "Sister",
+      "phone": "(772) 283-1441"
     }
   },
   {
-    "patient_id": "P0021",
-    "patient_name": "Yvonne Adams",
-    "date_of_birth": "1957-08-13",
-    "gender": "Male",
-    "admission_date": "2025-08-30",
-    "discharge_date": "2025-09-02",
-    "primary_diagnosis": "Chronic Kidney Disease Stage 3",
+    "patient_id": "P0008",
+    "patient_name": "Olivia Thomas",
+    "date_of_birth": "1973-05-03",
+    "gender": "Female",
+    "admission_date": "2025-11-15",
+    "discharge_date": "2025-11-24",
+    "primary_diagnosis": "Acute Kidney Injury",
     "secondary_diagnoses": [
-      "Hypertension",
-      "Type 2 Diabetes",
-      "Anemia"
+      "Metabolic Acidosis",
+      "Hyperkalemia"
     ],
     "medications": [
       "Furosemide 20mg twice daily",
-      "Lisinopril 10mg daily",
-      "Sodium bicarbonate 650mg TID",
-      "Losartan 50mg daily",
-      "Iron supplement 325mg daily"
+      "Lisinopril 10mg daily"
     ],
     "lab_values": {
-      "creatinine": 4.0,
-      "egfr": 25,
-      "potassium": 4.0,
-      "hemoglobin": 11.0,
-      "albumin": 3.2
+      "creatinine": 1.7,
+      "egfr": 56,
+      "potassium": 5.1,
+      "hemoglobin": 11.3,
+      "albumin": 3.8
     },
     "dietary_restrictions": "Low sodium (2g/day), fluid restriction (1.5L/day)",
-    "follow_up": "Nephrology clinic on 2025-09-23 (21 days)",
-    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
+    "follow_up": "Nephrology clinic on 2025-12-08 (14 days)",
+    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
     "discharge_instructions": "Take all medications as prescribed, attend all follow-up appointments",
-    "attending_physician": "Dr. Williams",
-    "contact_number": "804.576.7834",
+    "attending_physician": "Dr. Martinez",
+    "contact_number": "(626) 571-2564",
     "emergency_contact": {
-      "name": "Joshua Prince",
-      "relationship": "Son",
-      "phone": "7248341406"
+      "name": "Mary Smith",
+      "relationship": "Spouse",
+      "phone": "(901) 934-4975"
     }
   },
   {
-    "patient_id": "P0022",
-    "patient_name": "Brian Gates",
-    "date_of_birth": "1961-01-12",
-    "gender": "Male",
-    "admission_date": "2025-10-17",
-    "discharge_date": "2025-10-20",
-    "primary_diagnosis": "Polycystic Kidney Disease",
+    "patient_id": "P0009",
+    "patient_name": "James Jackson",
+    "date_of_birth": "1956-02-29",
+    "gender": "Female",
+    "admission_date": "2025-12-11",
+    "discharge_date": "2025-12-16",
+    "primary_diagnosis": "Nephrotic Syndrome",
     "secondary_diagnoses": [
+      "Anemia",
       "Metabolic Acidosis",
-      "Hypertension",
       "Type 2 Diabetes"
     ],
     "medications": [
       "Lisinopril 10mg daily",
+      "Sodium bicarbonate 650mg TID"
+    ],
+    "lab_values": {
+      "creatinine": 2.9,
+      "egfr": 44,
+      "potassium": 3.9,
+      "hemoglobin": 11.2,
+      "albumin": 3.2
+    },
+    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
+    "follow_up": "Nephrology clinic on 2025-12-23 (7 days)",
+    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
+    "discharge_instructions": "Take all medications as prescribed, attend all follow-up appointments",
+    "attending_physician": "Dr. Brown",
+    "contact_number": "(452) 714-7026",
+    "emergency_contact": {
+      "name": "John Brown Jr.",
+      "relationship": "Son",
+      "phone": "(265) 484-3526"
+    }
+  },
+  {
+    "patient_id": "P0010",
+    "patient_name": "Emma White",
+    "date_of_birth": "1978-01-09",
+    "gender": "Female",
+    "admission_date": "2025-10-11",
+    "discharge_date": "2025-10-14",
+    "primary_diagnosis": "Urinary Tract Infection with AKI",
+    "secondary_diagnoses": [
+      "Hyperkalemia",
+      "Hypertension"
+    ],
+    "medications": [
+      "Lisinopril 10mg daily",
+      "Sodium bicarbonate 650mg TID"
+    ],
+    "lab_values": {
+      "creatinine": 2.5,
+      "egfr": 59,
+      "potassium": 4.7,
+      "hemoglobin": 9.8,
+      "albumin": 3.5
+    },
+    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
+    "follow_up": "Nephrology clinic on 2025-11-04 (21 days)",
+    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
+    "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
+    "attending_physician": "Dr. Brown",
+    "contact_number": "(741) 583-6448",
+    "emergency_contact": {
+      "name": "Mary Smith",
+      "relationship": "Spouse",
+      "phone": "(352) 535-2271"
+    }
+  },
+  {
+    "patient_id": "P0011",
+    "patient_name": "Robert Harris",
+    "date_of_birth": "1966-10-30",
+    "gender": "Female",
+    "admission_date": "2025-10-20",
+    "discharge_date": "2025-10-29",
+    "primary_diagnosis": "Lupus Nephritis",
+    "secondary_diagnoses": [
+      "Type 2 Diabetes",
+      "Hypertension",
+      "Anemia"
+    ],
+    "medications": [
+      "Sodium bicarbonate 650mg TID",
+      "Lisinopril 10mg daily"
+    ],
+    "lab_values": {
+      "creatinine": 2.7,
+      "egfr": 34,
+      "potassium": 4.6,
+      "hemoglobin": 9.6,
+      "albumin": 3.7
+    },
+    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
+    "follow_up": "Nephrology clinic on 2025-11-28 (30 days)",
+    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
+    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
+    "attending_physician": "Dr. Thompson",
+    "contact_number": "(329) 581-4886",
+    "emergency_contact": {
+      "name": "Jennifer Anderson",
+      "relationship": "Daughter",
+      "phone": "(354) 600-8854"
+    }
+  },
+  {
+    "patient_id": "P0012",
+    "patient_name": "Ava Martin",
+    "date_of_birth": "1950-11-29",
+    "gender": "Female",
+    "admission_date": "2025-11-02",
+    "discharge_date": "2025-11-10",
+    "primary_diagnosis": "Urinary Tract Infection with AKI",
+    "secondary_diagnoses": [
+      "Anemia",
+      "Metabolic Acidosis",
+      "Hypertension"
+    ],
+    "medications": [
+      "Sodium bicarbonate 650mg TID",
+      "Lisinopril 10mg daily"
+    ],
+    "lab_values": {
+      "creatinine": 2.2,
+      "egfr": 58,
+      "potassium": 3.8,
+      "hemoglobin": 11.8,
+      "albumin": 3.3
+    },
+    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
+    "follow_up": "Nephrology clinic on 2025-12-01 (21 days)",
+    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
+    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
+    "attending_physician": "Dr. Martinez",
+    "contact_number": "(201) 225-7851",
+    "emergency_contact": {
+      "name": "David Taylor",
+      "relationship": "Son",
+      "phone": "(786) 658-9500"
+    }
+  },
+  {
+    "patient_id": "P0013",
+    "patient_name": "William Thompson",
+    "date_of_birth": "1974-04-08",
+    "gender": "Male",
+    "admission_date": "2025-11-22",
+    "discharge_date": "2025-12-02",
+    "primary_diagnosis": "Nephrotic Syndrome",
+    "secondary_diagnoses": [
+      "Metabolic Acidosis",
+      "Hyperkalemia"
+    ],
+    "medications": [
+      "Sodium bicarbonate 650mg TID",
+      "Lisinopril 10mg daily"
+    ],
+    "lab_values": {
+      "creatinine": 4.2,
+      "egfr": 55,
+      "potassium": 4.0,
+      "hemoglobin": 10.5,
+      "albumin": 3.2
+    },
+    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
+    "follow_up": "Nephrology clinic on 2025-12-23 (21 days)",
+    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
+    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
+    "attending_physician": "Dr. Wilson",
+    "contact_number": "(325) 599-7097",
+    "emergency_contact": {
+      "name": "John Brown Jr.",
+      "relationship": "Son",
+      "phone": "(351) 900-4650"
+    }
+  },
+  {
+    "patient_id": "P0014",
+    "patient_name": "Isabella Garcia",
+    "date_of_birth": "1985-12-29",
+    "gender": "Male",
+    "admission_date": "2025-10-26",
+    "discharge_date": "2025-11-01",
+    "primary_diagnosis": "Chronic Kidney Disease Stage 4",
+    "secondary_diagnoses": [
+      "Hyperkalemia",
+      "Hypertension"
+    ],
+    "medications": [
+      "Sodium bicarbonate 650mg TID",
+      "Furosemide 20mg twice daily",
+      "Lisinopril 10mg daily",
+      "Metoprolol 25mg BID",
+      "Iron supplement 325mg daily"
+    ],
+    "lab_values": {
+      "creatinine": 4.0,
+      "egfr": 42,
+      "potassium": 4.7,
+      "hemoglobin": 9.7,
+      "albumin": 3.1
+    },
+    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
+    "follow_up": "Nephrology clinic on 2025-11-15 (14 days)",
+    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
+    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
+    "attending_physician": "Dr. Williams",
+    "contact_number": "(725) 850-4125",
+    "emergency_contact": {
+      "name": "David Taylor",
+      "relationship": "Son",
+      "phone": "(841) 925-2475"
+    }
+  },
+  {
+    "patient_id": "P0015",
+    "patient_name": "Joseph Martinez",
+    "date_of_birth": "1982-07-21",
+    "gender": "Female",
+    "admission_date": "2025-11-02",
+    "discharge_date": "2025-11-08",
+    "primary_diagnosis": "Lupus Nephritis",
+    "secondary_diagnoses": [
+      "Hypertension",
+      "Hyperkalemia",
+      "Metabolic Acidosis"
+    ],
+    "medications": [
+      "Sodium bicarbonate 650mg TID",
+      "Furosemide 20mg twice daily"
+    ],
+    "lab_values": {
+      "creatinine": 2.3,
+      "egfr": 39,
+      "potassium": 4.6,
+      "hemoglobin": 12.4,
+      "albumin": 3.5
+    },
+    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
+    "follow_up": "Nephrology clinic on 2025-11-15 (7 days)",
+    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
+    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
+    "attending_physician": "Dr. Thompson",
+    "contact_number": "(229) 293-9071",
+    "emergency_contact": {
+      "name": "Lisa Johnson",
+      "relationship": "Daughter",
+      "phone": "(419) 768-6018"
+    }
+  },
+  {
+    "patient_id": "P0016",
+    "patient_name": "Mia Robinson",
+    "date_of_birth": "1966-06-27",
+    "gender": "Female",
+    "admission_date": "2025-12-10",
+    "discharge_date": "2025-12-14",
+    "primary_diagnosis": "IgA Nephropathy",
+    "secondary_diagnoses": [
+      "Hyperkalemia",
+      "Type 2 Diabetes"
+    ],
+    "medications": [
+      "Furosemide 20mg twice daily",
+      "Sodium bicarbonate 650mg TID"
+    ],
+    "lab_values": {
+      "creatinine": 1.5,
+      "egfr": 28,
+      "potassium": 5.1,
+      "hemoglobin": 10.0,
+      "albumin": 3.8
+    },
+    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
+    "follow_up": "Nephrology clinic on 2025-12-28 (14 days)",
+    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
+    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
+    "attending_physician": "Dr. Johnson",
+    "contact_number": "(701) 930-4876",
+    "emergency_contact": {
+      "name": "John Brown Jr.",
+      "relationship": "Son",
+      "phone": "(861) 361-5716"
+    }
+  },
+  {
+    "patient_id": "P0017",
+    "patient_name": "Charles Clark",
+    "date_of_birth": "1985-09-14",
+    "gender": "Female",
+    "admission_date": "2025-12-04",
+    "discharge_date": "2025-12-09",
+    "primary_diagnosis": "Acute Kidney Injury",
+    "secondary_diagnoses": [
+      "Anemia",
+      "Type 2 Diabetes"
+    ],
+    "medications": [
+      "Furosemide 20mg twice daily",
+      "Lisinopril 10mg daily"
+    ],
+    "lab_values": {
+      "creatinine": 2.0,
+      "egfr": 50,
+      "potassium": 4.5,
+      "hemoglobin": 9.7,
+      "albumin": 3.1
+    },
+    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
+    "follow_up": "Nephrology clinic on 2025-12-16 (7 days)",
+    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
+    "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
+    "attending_physician": "Dr. Thompson",
+    "contact_number": "(939) 486-5745",
+    "emergency_contact": {
+      "name": "Robert Wilson",
+      "relationship": "Brother",
+      "phone": "(263) 366-4207"
+    }
+  },
+  {
+    "patient_id": "P0018",
+    "patient_name": "Amelia Rodriguez",
+    "date_of_birth": "1982-02-14",
+    "gender": "Female",
+    "admission_date": "2025-12-15",
+    "discharge_date": "2025-12-19",
+    "primary_diagnosis": "Acute Kidney Injury",
+    "secondary_diagnoses": [
+      "Metabolic Acidosis"
+    ],
+    "medications": [
+      "Furosemide 20mg twice daily",
+      "Lisinopril 10mg daily"
+    ],
+    "lab_values": {
+      "creatinine": 2.9,
+      "egfr": 41,
+      "potassium": 5.2,
+      "hemoglobin": 10.7,
+      "albumin": 3.4
+    },
+    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
+    "follow_up": "Nephrology clinic on 2025-12-26 (7 days)",
+    "warning_signs": "High fever, severe back pain, unable to urinate",
+    "discharge_instructions": "Take all medications as prescribed, attend all follow-up appointments",
+    "attending_physician": "Dr. Wilson",
+    "contact_number": "(543) 720-3320",
+    "emergency_contact": {
+      "name": "David Taylor",
+      "relationship": "Son",
+      "phone": "(571) 472-7864"
+    }
+  },
+  {
+    "patient_id": "P0019",
+    "patient_name": "Thomas Lewis",
+    "date_of_birth": "1967-07-29",
+    "gender": "Male",
+    "admission_date": "2025-12-05",
+    "discharge_date": "2025-12-15",
+    "primary_diagnosis": "Hypertensive Nephropathy",
+    "secondary_diagnoses": [
+      "Type 2 Diabetes",
+      "Hypertension"
+    ],
+    "medications": [
+      "Metoprolol 25mg BID",
+      "Amlodipine 5mg daily",
       "Furosemide 20mg twice daily"
     ],
     "lab_values": {
       "creatinine": 2.6,
-      "egfr": 53,
-      "potassium": 4.6,
-      "hemoglobin": 12.1,
-      "albumin": 4.2
+      "egfr": 33,
+      "potassium": 4.8,
+      "hemoglobin": 11.3,
+      "albumin": 3.7
+    },
+    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
+    "follow_up": "Nephrology clinic on 2025-12-22 (7 days)",
+    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
+    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
+    "attending_physician": "Dr. Johnson",
+    "contact_number": "(576) 517-2011",
+    "emergency_contact": {
+      "name": "Michael Thomas",
+      "relationship": "Spouse",
+      "phone": "(676) 220-7905"
+    }
+  },
+  {
+    "patient_id": "P0020",
+    "patient_name": "Charlotte Lee",
+    "date_of_birth": "1960-04-17",
+    "gender": "Male",
+    "admission_date": "2025-10-20",
+    "discharge_date": "2025-10-27",
+    "primary_diagnosis": "Chronic Kidney Disease Stage 3",
+    "secondary_diagnoses": [
+      "Hyperkalemia"
+    ],
+    "medications": [
+      "Sodium bicarbonate 650mg TID",
+      "Furosemide 20mg twice daily",
+      "Metoprolol 25mg BID",
+      "Iron supplement 325mg daily"
+    ],
+    "lab_values": {
+      "creatinine": 3.9,
+      "egfr": 60,
+      "potassium": 4.1,
+      "hemoglobin": 9.7,
+      "albumin": 3.2
     },
     "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
-    "follow_up": "Nephrology clinic on 2025-11-10 (21 days)",
-    "warning_signs": "Chest pain, severe headache, blood in urine",
-    "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
-    "attending_physician": "Dr. Vega",
-    "contact_number": "(976)865-3805x5022",
+    "follow_up": "Nephrology clinic on 2025-11-26 (30 days)",
+    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
+    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
+    "attending_physician": "Dr. Wilson",
+    "contact_number": "(792) 782-1989",
     "emergency_contact": {
-      "name": "Timothy Singh",
-      "relationship": "Son",
-      "phone": "639-314-2998x73313"
+      "name": "Lisa Johnson",
+      "relationship": "Daughter",
+      "phone": "(397) 481-3707"
+    }
+  },
+  {
+    "patient_id": "P0021",
+    "patient_name": "Christopher Walker",
+    "date_of_birth": "1953-08-05",
+    "gender": "Male",
+    "admission_date": "2025-10-23",
+    "discharge_date": "2025-11-02",
+    "primary_diagnosis": "Urinary Tract Infection with AKI",
+    "secondary_diagnoses": [
+      "Hypertension"
+    ],
+    "medications": [
+      "Furosemide 20mg twice daily",
+      "Lisinopril 10mg daily"
+    ],
+    "lab_values": {
+      "creatinine": 4.5,
+      "egfr": 25,
+      "potassium": 4.3,
+      "hemoglobin": 10.3,
+      "albumin": 3.7
+    },
+    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
+    "follow_up": "Nephrology clinic on 2025-11-23 (21 days)",
+    "warning_signs": "High fever, severe back pain, unable to urinate",
+    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
+    "attending_physician": "Dr. Brown",
+    "contact_number": "(912) 346-7078",
+    "emergency_contact": {
+      "name": "Robert Wilson",
+      "relationship": "Brother",
+      "phone": "(879) 665-8210"
+    }
+  },
+  {
+    "patient_id": "P0022",
+    "patient_name": "Harper Hall",
+    "date_of_birth": "1946-06-30",
+    "gender": "Female",
+    "admission_date": "2025-12-04",
+    "discharge_date": "2025-12-12",
+    "primary_diagnosis": "Kidney Stone Disease",
+    "secondary_diagnoses": [
+      "Hyperkalemia",
+      "Hypertension",
+      "Type 2 Diabetes"
+    ],
+    "medications": [
+      "Furosemide 20mg twice daily",
+      "Sodium bicarbonate 650mg TID"
+    ],
+    "lab_values": {
+      "creatinine": 2.6,
+      "egfr": 59,
+      "potassium": 5.0,
+      "hemoglobin": 9.7,
+      "albumin": 3.3
+    },
+    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
+    "follow_up": "Nephrology clinic on 2026-01-11 (30 days)",
+    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
+    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
+    "attending_physician": "Dr. Wilson",
+    "contact_number": "(341) 609-8988",
+    "emergency_contact": {
+      "name": "Lisa Johnson",
+      "relationship": "Daughter",
+      "phone": "(960) 968-5887"
     }
   },
   {
     "patient_id": "P0023",
-    "patient_name": "Stephanie Harrison",
-    "date_of_birth": "1948-02-06",
+    "patient_name": "Anthony Allen",
+    "date_of_birth": "1969-01-12",
     "gender": "Male",
-    "admission_date": "2025-08-18",
-    "discharge_date": "2025-08-28",
+    "admission_date": "2025-11-15",
+    "discharge_date": "2025-11-24",
+    "primary_diagnosis": "Chronic Kidney Disease Stage 4",
+    "secondary_diagnoses": [
+      "Hypertension"
+    ],
+    "medications": [
+      "Lisinopril 10mg daily",
+      "Furosemide 20mg twice daily",
+      "Sodium bicarbonate 650mg TID",
+      "Losartan 50mg daily",
+      "Erythropoietin 4000 units weekly"
+    ],
+    "lab_values": {
+      "creatinine": 3.2,
+      "egfr": 52,
+      "potassium": 4.4,
+      "hemoglobin": 10.6,
+      "albumin": 3.3
+    },
+    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
+    "follow_up": "Nephrology clinic on 2025-12-15 (21 days)",
+    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
+    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
+    "attending_physician": "Dr. Williams",
+    "contact_number": "(309) 527-6864",
+    "emergency_contact": {
+      "name": "Michael Thomas",
+      "relationship": "Spouse",
+      "phone": "(650) 469-9132"
+    }
+  },
+  {
+    "patient_id": "P0024",
+    "patient_name": "Evelyn Young",
+    "date_of_birth": "1960-07-21",
+    "gender": "Female",
+    "admission_date": "2025-10-13",
+    "discharge_date": "2025-10-18",
+    "primary_diagnosis": "Polycystic Kidney Disease",
+    "secondary_diagnoses": [
+      "Anemia",
+      "Hypertension"
+    ],
+    "medications": [
+      "Lisinopril 10mg daily",
+      "Sodium bicarbonate 650mg TID"
+    ],
+    "lab_values": {
+      "creatinine": 4.3,
+      "egfr": 37,
+      "potassium": 4.8,
+      "hemoglobin": 12.0,
+      "albumin": 4.0
+    },
+    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
+    "follow_up": "Nephrology clinic on 2025-11-08 (21 days)",
+    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
+    "discharge_instructions": "Low-impact exercise 30 min daily, avoid dehydration",
+    "attending_physician": "Dr. Martinez",
+    "contact_number": "(236) 275-1921",
+    "emergency_contact": {
+      "name": "David Taylor",
+      "relationship": "Son",
+      "phone": "(646) 665-3497"
+    }
+  },
+  {
+    "patient_id": "P0025",
+    "patient_name": "Andrew King",
+    "date_of_birth": "1964-06-18",
+    "gender": "Female",
+    "admission_date": "2025-10-17",
+    "discharge_date": "2025-10-27",
+    "primary_diagnosis": "Hypertensive Nephropathy",
+    "secondary_diagnoses": [
+      "Anemia",
+      "Metabolic Acidosis",
+      "Type 2 Diabetes"
+    ],
+    "medications": [
+      "Losartan 50mg daily",
+      "Amlodipine 5mg daily",
+      "Furosemide 20mg twice daily"
+    ],
+    "lab_values": {
+      "creatinine": 2.8,
+      "egfr": 59,
+      "potassium": 3.8,
+      "hemoglobin": 10.5,
+      "albumin": 3.0
+    },
+    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
+    "follow_up": "Nephrology clinic on 2025-11-17 (21 days)",
+    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
+    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
+    "attending_physician": "Dr. Brown",
+    "contact_number": "(274) 225-5668",
+    "emergency_contact": {
+      "name": "Lisa Johnson",
+      "relationship": "Daughter",
+      "phone": "(316) 655-6902"
+    }
+  },
+  {
+    "patient_id": "P0026",
+    "patient_name": "Matthew Scott",
+    "date_of_birth": "1953-11-25",
+    "gender": "Female",
+    "admission_date": "2025-12-13",
+    "discharge_date": "2025-12-20",
+    "primary_diagnosis": "Lupus Nephritis",
+    "secondary_diagnoses": [
+      "Anemia"
+    ],
+    "medications": [
+      "Furosemide 20mg twice daily",
+      "Lisinopril 10mg daily"
+    ],
+    "lab_values": {
+      "creatinine": 3.5,
+      "egfr": 25,
+      "potassium": 4.5,
+      "hemoglobin": 11.0,
+      "albumin": 3.3
+    },
+    "dietary_restrictions": "Diabetic diet with carb counting, low sodium",
+    "follow_up": "Nephrology clinic on 2026-01-19 (30 days)",
+    "warning_signs": "Chest pain, severe headache, blood in urine",
+    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
+    "attending_physician": "Dr. Brown",
+    "contact_number": "(716) 728-4422",
+    "emergency_contact": {
+      "name": "Lisa Johnson",
+      "relationship": "Daughter",
+      "phone": "(227) 506-5028"
+    }
+  },
+  {
+    "patient_id": "P0027",
+    "patient_name": "Abigail Green",
+    "date_of_birth": "1953-02-07",
+    "gender": "Male",
+    "admission_date": "2025-12-27",
+    "discharge_date": "2026-01-04",
     "primary_diagnosis": "Chronic Kidney Disease Stage 4",
     "secondary_diagnoses": [
       "Anemia",
@@ -802,219 +938,41 @@
       "Type 2 Diabetes"
     ],
     "medications": [
-      "Furosemide 20mg twice daily",
-      "Lisinopril 10mg daily",
       "Sodium bicarbonate 650mg TID",
+      "Furosemide 20mg twice daily",
       "Losartan 50mg daily",
       "Iron supplement 325mg daily"
     ],
     "lab_values": {
-      "creatinine": 3.7,
-      "egfr": 32,
-      "potassium": 3.8,
-      "hemoglobin": 10.1,
-      "albumin": 3.3
-    },
-    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
-    "follow_up": "Nephrology clinic on 2025-09-18 (21 days)",
-    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
-    "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
-    "attending_physician": "Dr. Steele",
-    "contact_number": "4384722643",
-    "emergency_contact": {
-      "name": "Bobby Fisher",
-      "relationship": "Sibling",
-      "phone": "515-772-6830"
-    }
-  },
-  {
-    "patient_id": "P0024",
-    "patient_name": "Michele Norris",
-    "date_of_birth": "1961-06-22",
-    "gender": "Male",
-    "admission_date": "2025-10-19",
-    "discharge_date": "2025-10-23",
-    "primary_diagnosis": "Urinary Tract Infection with AKI",
-    "secondary_diagnoses": [
-      "Type 2 Diabetes",
-      "Hyperkalemia",
-      "Hypertension"
-    ],
-    "medications": [
-      "Lisinopril 10mg daily",
-      "Sodium bicarbonate 650mg TID"
-    ],
-    "lab_values": {
-      "creatinine": 4.4,
-      "egfr": 39,
-      "potassium": 4.2,
-      "hemoglobin": 10.8,
-      "albumin": 3.1
-    },
-    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
-    "follow_up": "Nephrology clinic on 2025-11-22 (30 days)",
-    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
-    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
-    "attending_physician": "Dr. Hoffman",
-    "contact_number": "001-712-762-6034x30782",
-    "emergency_contact": {
-      "name": "Amber Pierce",
-      "relationship": "Son",
-      "phone": "(822)747-1792x698"
-    }
-  },
-  {
-    "patient_id": "P0025",
-    "patient_name": "William Santos",
-    "date_of_birth": "1974-11-06",
-    "gender": "Male",
-    "admission_date": "2025-09-02",
-    "discharge_date": "2025-09-08",
-    "primary_diagnosis": "Hypertensive Nephropathy",
-    "secondary_diagnoses": [
-      "Anemia",
-      "Metabolic Acidosis",
-      "Type 2 Diabetes"
-    ],
-    "medications": [
-      "Metoprolol 25mg BID",
-      "Amlodipine 5mg daily",
-      "Lisinopril 10mg daily"
-    ],
-    "lab_values": {
-      "creatinine": 2.6,
+      "creatinine": 3.3,
       "egfr": 51,
-      "potassium": 5.1,
-      "hemoglobin": 11.2,
+      "potassium": 5.0,
+      "hemoglobin": 11.1,
       "albumin": 3.6
     },
-    "dietary_restrictions": "Low sodium (2g/day), fluid restriction (1.5L/day)",
-    "follow_up": "Nephrology clinic on 2025-10-08 (30 days)",
-    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
+    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
+    "follow_up": "Nephrology clinic on 2026-01-11 (7 days)",
+    "warning_signs": "High fever, severe back pain, unable to urinate",
     "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
-    "attending_physician": "Dr. Fuller",
-    "contact_number": "324-258-6952x7878",
+    "attending_physician": "Dr. Martinez",
+    "contact_number": "(820) 571-3302",
     "emergency_contact": {
-      "name": "John Montgomery",
-      "relationship": "Spouse",
-      "phone": "001-804-930-8955x64255"
-    }
-  },
-  {
-    "patient_id": "P0026",
-    "patient_name": "Joseph Bell",
-    "date_of_birth": "1985-10-22",
-    "gender": "Female",
-    "admission_date": "2025-10-26",
-    "discharge_date": "2025-11-02",
-    "primary_diagnosis": "Chronic Kidney Disease Stage 3",
-    "secondary_diagnoses": [
-      "Type 2 Diabetes"
-    ],
-    "medications": [
-      "Lisinopril 10mg daily",
-      "Sodium bicarbonate 650mg TID",
-      "Furosemide 20mg twice daily",
-      "Metoprolol 25mg BID",
-      "Erythropoietin 4000 units weekly"
-    ],
-    "lab_values": {
-      "creatinine": 3.3,
-      "egfr": 39,
-      "potassium": 4.1,
-      "hemoglobin": 11.2,
-      "albumin": 3.0
-    },
-    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
-    "follow_up": "Nephrology clinic on 2025-11-16 (14 days)",
-    "warning_signs": "Swelling in legs or face, shortness of breath, decreased urine output",
-    "discharge_instructions": "Take all medications as prescribed, attend all follow-up appointments",
-    "attending_physician": "Dr. Rogers",
-    "contact_number": "599.306.5728",
-    "emergency_contact": {
-      "name": "Hailey Brown",
+      "name": "David Taylor",
       "relationship": "Son",
-      "phone": "427.916.5748"
-    }
-  },
-  {
-    "patient_id": "P0027",
-    "patient_name": "Darrell Wood",
-    "date_of_birth": "1967-02-19",
-    "gender": "Female",
-    "admission_date": "2025-08-04",
-    "discharge_date": "2025-08-09",
-    "primary_diagnosis": "Nephrotic Syndrome",
-    "secondary_diagnoses": [
-      "Hypertension"
-    ],
-    "medications": [
-      "Furosemide 20mg twice daily",
-      "Sodium bicarbonate 650mg TID"
-    ],
-    "lab_values": {
-      "creatinine": 3.4,
-      "egfr": 38,
-      "potassium": 4.9,
-      "hemoglobin": 11.5,
-      "albumin": 3.1
-    },
-    "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
-    "follow_up": "Nephrology clinic on 2025-08-23 (14 days)",
-    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
-    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
-    "attending_physician": "Dr. Barrett",
-    "contact_number": "(235)681-2266x179",
-    "emergency_contact": {
-      "name": "Robert Trujillo",
-      "relationship": "Spouse",
-      "phone": "965.293.2402"
+      "phone": "(605) 963-3973"
     }
   },
   {
     "patient_id": "P0028",
-    "patient_name": "Cindy Brown",
-    "date_of_birth": "1989-05-02",
-    "gender": "Male",
-    "admission_date": "2025-10-17",
-    "discharge_date": "2025-10-27",
-    "primary_diagnosis": "Acute Kidney Injury",
-    "secondary_diagnoses": [
-      "Metabolic Acidosis"
-    ],
-    "medications": [
-      "Furosemide 20mg twice daily",
-      "Lisinopril 10mg daily"
-    ],
-    "lab_values": {
-      "creatinine": 2.8,
-      "egfr": 29,
-      "potassium": 5.0,
-      "hemoglobin": 11.8,
-      "albumin": 3.3
-    },
-    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
-    "follow_up": "Nephrology clinic on 2025-11-03 (7 days)",
-    "warning_signs": "High fever, severe back pain, unable to urinate",
-    "discharge_instructions": "Avoid NSAIDs (ibuprofen, aspirin), no contrast dyes without approval",
-    "attending_physician": "Dr. Jones",
-    "contact_number": "(284)495-3945x626",
-    "emergency_contact": {
-      "name": "Brandon Johnson MD",
-      "relationship": "Daughter",
-      "phone": "001-843-425-0071x2725"
-    }
-  },
-  {
-    "patient_id": "P0029",
-    "patient_name": "Eric Collins",
-    "date_of_birth": "1982-04-14",
+    "patient_name": "Ryan Adams",
+    "date_of_birth": "1957-08-18",
     "gender": "Female",
-    "admission_date": "2025-09-11",
-    "discharge_date": "2025-09-14",
-    "primary_diagnosis": "IgA Nephropathy",
+    "admission_date": "2025-10-17",
+    "discharge_date": "2025-10-20",
+    "primary_diagnosis": "Lupus Nephritis",
     "secondary_diagnoses": [
-      "Type 2 Diabetes"
+      "Hypertension",
+      "Metabolic Acidosis"
     ],
     "medications": [
       "Lisinopril 10mg daily",
@@ -1022,55 +980,126 @@
     ],
     "lab_values": {
       "creatinine": 2.2,
-      "egfr": 53,
-      "potassium": 4.5,
-      "hemoglobin": 11.8,
-      "albumin": 3.7
+      "egfr": 60,
+      "potassium": 4.6,
+      "hemoglobin": 9.9,
+      "albumin": 4.0
     },
     "dietary_restrictions": "Fluid restriction (1L/day), low sodium (1.5g/day)",
-    "follow_up": "Nephrology clinic on 2025-09-28 (14 days)",
-    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
-    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
-    "attending_physician": "Dr. Brown",
-    "contact_number": "407-648-4104x5632",
+    "follow_up": "Nephrology clinic on 2025-11-03 (14 days)",
+    "warning_signs": "Confusion, extreme fatigue, nausea and vomiting",
+    "discharge_instructions": "Take all medications as prescribed, attend all follow-up appointments",
+    "attending_physician": "Dr. Anderson",
+    "contact_number": "(546) 948-8460",
     "emergency_contact": {
-      "name": "Brittany Huynh",
+      "name": "Lisa Johnson",
       "relationship": "Daughter",
-      "phone": "911.468.3118x75675"
+      "phone": "(813) 357-5903"
+    }
+  },
+  {
+    "patient_id": "P0029",
+    "patient_name": "Elizabeth Baker",
+    "date_of_birth": "1949-02-18",
+    "gender": "Female",
+    "admission_date": "2025-12-10",
+    "discharge_date": "2025-12-18",
+    "primary_diagnosis": "IgA Nephropathy",
+    "secondary_diagnoses": [
+      "Anemia",
+      "Hypertension",
+      "Type 2 Diabetes"
+    ],
+    "medications": [
+      "Sodium bicarbonate 650mg TID",
+      "Furosemide 20mg twice daily"
+    ],
+    "lab_values": {
+      "creatinine": 3.9,
+      "egfr": 32,
+      "potassium": 5.2,
+      "hemoglobin": 12.4,
+      "albumin": 3.5
+    },
+    "dietary_restrictions": "Low protein diet (0.8g/kg/day), low phosphorus",
+    "follow_up": "Nephrology clinic on 2026-01-01 (14 days)",
+    "warning_signs": "Chest pain, severe headache, blood in urine",
+    "discharge_instructions": "Monitor blood pressure daily, weigh yourself daily, track fluid intake",
+    "attending_physician": "Dr. Martinez",
+    "contact_number": "(822) 953-3506",
+    "emergency_contact": {
+      "name": "Lisa Johnson",
+      "relationship": "Daughter",
+      "phone": "(929) 614-6438"
     }
   },
   {
     "patient_id": "P0030",
-    "patient_name": "Jessica Clay",
-    "date_of_birth": "1971-12-27",
+    "patient_name": "Joshua Nelson",
+    "date_of_birth": "1973-04-11",
     "gender": "Female",
-    "admission_date": "2025-09-14",
-    "discharge_date": "2025-09-23",
-    "primary_diagnosis": "Polycystic Kidney Disease",
+    "admission_date": "2025-12-12",
+    "discharge_date": "2025-12-20",
+    "primary_diagnosis": "Lupus Nephritis",
     "secondary_diagnoses": [
-      "Hyperkalemia"
+      "Type 2 Diabetes"
     ],
     "medications": [
       "Lisinopril 10mg daily",
-      "Sodium bicarbonate 650mg TID"
+      "Furosemide 20mg twice daily"
     ],
     "lab_values": {
-      "creatinine": 3.8,
-      "egfr": 36,
-      "potassium": 4.5,
-      "hemoglobin": 11.4,
-      "albumin": 3.7
+      "creatinine": 1.6,
+      "egfr": 34,
+      "potassium": 5.0,
+      "hemoglobin": 12.1,
+      "albumin": 4.0
+    },
+    "dietary_restrictions": "Low potassium diet, avoid bananas and oranges",
+    "follow_up": "Nephrology clinic on 2025-12-27 (7 days)",
+    "warning_signs": "Rapid weight gain (>2kg in 2 days), difficulty breathing",
+    "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
+    "attending_physician": "Dr. Davis",
+    "contact_number": "(370) 210-6752",
+    "emergency_contact": {
+      "name": "John Brown Jr.",
+      "relationship": "Son",
+      "phone": "(704) 499-9469"
+    }
+  },
+  {
+    "patient_id": "P0031",
+    "patient_name": "Sofia Carter",
+    "date_of_birth": "1949-01-17",
+    "gender": "Female",
+    "admission_date": "2025-12-03",
+    "discharge_date": "2025-12-08",
+    "primary_diagnosis": "Urinary Tract Infection with AKI",
+    "secondary_diagnoses": [
+      "Anemia",
+      "Metabolic Acidosis"
+    ],
+    "medications": [
+      "Sodium bicarbonate 650mg TID",
+      "Furosemide 20mg twice daily"
+    ],
+    "lab_values": {
+      "creatinine": 1.8,
+      "egfr": 51,
+      "potassium": 5.1,
+      "hemoglobin": 9.6,
+      "albumin": 3.1
     },
     "dietary_restrictions": "Low sodium (2g/day), fluid restriction (1.5L/day)",
-    "follow_up": "Nephrology clinic on 2025-09-30 (7 days)",
+    "follow_up": "Nephrology clinic on 2026-01-07 (30 days)",
     "warning_signs": "High fever, severe back pain, unable to urinate",
     "discharge_instructions": "Check blood sugar 4 times daily, maintain medication log",
-    "attending_physician": "Dr. Kim",
-    "contact_number": "001-512-781-0732x74106",
+    "attending_physician": "Dr. Thompson",
+    "contact_number": "(720) 850-9078",
     "emergency_contact": {
-      "name": "Alexa Trujillo",
+      "name": "Jennifer Anderson",
       "relationship": "Daughter",
-      "phone": "813-928-7733"
+      "phone": "(729) 207-8319"
     }
   }
 ]

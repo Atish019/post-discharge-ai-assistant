@@ -9,7 +9,7 @@ The **Post-Discharge Medical AI Assistant** is a sophisticated multi-agent conve
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![Groq](https://img.shields.io/badge/LLM-Groq-green.svg)](https://groq.com/)
 [![LangGraph](https://img.shields.io/badge/Framework-LangGraph-orange.svg)](https://github.com/langchain-ai/langgraph)
-[![Streamlit](https://img.shields.io/badge/UI-Streamlit-red.svg)](https://streamlit.io/)
+
 
 
 ##  Overview

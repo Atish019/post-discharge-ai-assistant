@@ -1,306 +1,245 @@
-"""
-Clinical AI Agent
-Medical expert with RAG (nephrology knowledge) and web search
-"""
-
-import sys
-from pathlib import Path
-from typing import Dict, Optional, List
-
-# Add project root to path
-sys.path.append(str(Path(__file__).parent.parent.parent))
-
-from src.llm.groq_client import GroqLLMClient
-from src.agents.agent_tools import RAGRetrieverTool, WebSearchTool
-from config.settings import MEDICAL_DISCLAIMER
+from src.rag.retriever import NephrologyRetriever
+from src.rag.citation_generator import build_context_with_citations, format_answer_with_citations
+from src.llm.groq_client import GroqClient
+from src.utils.web_search import TavilyWebSearch
+from config.prompts import CLINICAL_SYSTEM_PROMPT
+from src.utils.logger import log_system
 
 
-class ClinicalAgent:
-    """
-    Clinical AI Agent - Medical Expert
+class ClinicalAIAgent:
+    """Clinical AI Agent with RAG + Web Search fallback"""
     
-    Responsibilities:
-    - Answer medical questions using nephrology knowledge base (RAG)
-    - Provide evidence-based medical information
-    - Use web search for latest research when needed
-    - Always include citations and sources
-    - Emphasize consulting healthcare providers
-    """
-    
-    def __init__(self):
-        """Initialize Clinical Agent"""
-        
-        self.llm = GroqLLMClient()
-        self.rag_tool = RAGRetrieverTool()
-        self.web_search_tool = WebSearchTool()
-        
-        # Agent state
-        self.conversation_history = []
-        self.patient_context = None
-        
-        # System prompt for clinical behavior
-        self.system_prompt = """You are an expert Clinical AI Assistant specializing in nephrology and post-discharge patient care.
-
-Your responsibilities:
-1. Answer medical questions using evidence-based information
-2. Use the provided medical context from nephrology textbooks
-3. Always cite your sources (page numbers, references)
-4. Emphasize that patients should consult their healthcare provider
-5. Be clear, accurate, and professional
-
-Guidelines:
-- ALWAYS base answers on provided medical context
-- Include citations in format: [Source: Page X]
-- If context doesn't have enough info, acknowledge limitations
-- Never diagnose or change treatment plans
-- Remind patients to contact their doctor for urgent concerns
-- Use clear, patient-friendly language while maintaining medical accuracy
-
-Remember: You provide information and guidance, but final medical decisions must be made by healthcare professionals."""
-        
-        print("✅ Clinical Agent initialized with RAG and Web Search")
-    
-    def set_patient_context(self, patient_context: str):
-        """Set patient context from Receptionist Agent"""
-        self.patient_context = patient_context
-    
-    def answer_medical_query(
-        self,
-        query: str,
-        use_web_search: bool = False
-    ) -> Dict:
+    def __init__(self, top_k: int = 5):
         """
-        Answer medical query using RAG and optionally web search
+        Initialize Clinical Agent
         
         Args:
-            query: Patient's medical question
-            use_web_search: Whether to also search the web
+            top_k: Number of chunks to retrieve for RAG
+        """
+        print(" Initializing Clinical AI Agent...")
+        
+        self.retriever = NephrologyRetriever(top_k=top_k)
+        self.llm = GroqClient(
+            model_name="llama-3.3-70b-versatile",
+            temperature=0.3
+        )
+        self.web_search = TavilyWebSearch(max_results=3)
+        
+        log_system("Clinical AI Agent initialized with web search")
+        print(" Clinical AI Agent ready (RAG + Web Search)\n")
+    
+    def answer_medical_query(self, user_query: str) -> dict:
+        """
+        Answer medical query using RAG-first, web search fallback
+        
+        Args:
+            user_query: Patient's medical question
         
         Returns:
-            Dict with answer, sources, and citations
+            dict with answer, sources, method used, and metadata
         """
+        print(f" Processing query: {user_query[:50]}...")
         
-        # Step 1: Retrieve relevant context from knowledge base
-        print(f"\n🔍 Retrieving relevant medical context...")
-        rag_results = self.rag_tool.retrieve_context(query, top_k=5)
+        # Step 1: Try RAG first
+        retrieved_chunks = self.retriever.retrieve(user_query)
         
-        has_relevant_context = rag_results['num_results'] > 0
+        # Step 2: Decide if web search needed
+        needs_web = self._needs_web_search(user_query, retrieved_chunks)
         
-        # Step 2: Decide if web search is needed
-        need_web_search = use_web_search or not has_relevant_context
+        if needs_web:
+            print(" Using web search (recent information needed)")
+            return self._web_search_answer(user_query)
         
-        web_results = None
-        if need_web_search and self.web_search_tool.client:
-            print(f"🌐 Searching web for additional information...")
-            web_results = self.web_search_tool.search(
-                query=f"nephrology {query}",
-                max_results=3
-            )
+        # Step 3: RAG-based answer
+        if not retrieved_chunks:
+            return self._no_context_response()
         
-        # Step 3: Generate answer using LLM with context
-        answer = self._generate_clinical_answer(
-            query=query,
-            rag_context=rag_results,
-            web_results=web_results
-        )
-        
-        # Step 4: Compile response
-        response = {
-            "answer": answer,
-            "rag_sources": rag_results['documents'],
-            "web_sources": web_results['results'] if web_results else [],
-            "used_rag": has_relevant_context,
-            "used_web": web_results is not None and len(web_results.get('results', [])) > 0,
-            "query": query
-        }
-        
-        return response
+        print(f" Using RAG ({len(retrieved_chunks)} chunks)")
+        return self._rag_answer(user_query, retrieved_chunks)
     
-    def _generate_clinical_answer(
-        self,
-        query: str,
-        rag_context: Dict,
-        web_results: Optional[Dict]
-    ) -> str:
-        """Generate clinical answer using LLM"""
+    def _needs_web_search(self, query: str, chunks: list) -> bool:
+        """
+        Determine if web search needed
         
-        # Build prompt with all context
-        prompt_parts = []
+        Triggers:
+        - Query contains keywords like "latest", "recent", "new"
+        - No relevant chunks found in RAG
+        """
+        web_keywords = [
+            "latest", "recent", "new", "current", 
+            "2024", "2025", "update", "research",
+            "trial", "guidelines", "breakthrough"
+        ]
         
-        # Patient context
-        if self.patient_context:
-            prompt_parts.append(f"PATIENT INFORMATION:\n{self.patient_context}\n")
+        query_lower = query.lower()
         
-        # RAG context
-        if rag_context['num_results'] > 0:
-            prompt_parts.append(f"MEDICAL REFERENCE CONTEXT:\n{rag_context['context']}\n")
+        # Check keywords
+        if any(keyword in query_lower for keyword in web_keywords):
+            return True
         
-        # Web search results
-        if web_results and web_results.get('results'):
-            web_context = self.web_search_tool.format_search_results(web_results)
-            prompt_parts.append(f"RECENT MEDICAL LITERATURE:\n{web_context}\n")
+        # Check if RAG failed
+        if not chunks or len(chunks) == 0:
+            return True
         
-        # The question
-        prompt_parts.append(f"PATIENT QUESTION:\n{query}\n")
+        return False
+    
+    def _rag_answer(self, query: str, chunks: list) -> dict:
+        """Generate answer using RAG"""
         
-        # Instructions
-        prompt_parts.append("""
-Please provide a detailed, medically accurate answer:
-1. Address the patient's question directly
-2. Use information from the provided medical context
-3. Include citations [Source: Page X] for medical facts
-4. Provide actionable guidance when appropriate
-5. Remind patient to consult their healthcare provider
+        # Build context with citations
+        context, citation_text = build_context_with_citations(chunks)
+        
+        # Create prompt
+        user_prompt = f"""**Medical Question:**
+{query}
 
-Keep the answer clear, professional, and patient-friendly.""")
+**Medical Context from Reference:**
+{context}
+
+**Instructions:**
+Answer using ONLY the information in the context above.
+Include page references in your answer.
+"""
         
-        full_prompt = "\n".join(prompt_parts)
+        # Generate with LLM
+        print(" Generating answer...")
+        try:
+            answer = self.llm.generate(
+                system_prompt=CLINICAL_SYSTEM_PROMPT,
+                user_prompt=user_prompt,
+                max_tokens=1500
+            )
+        except Exception as e:
+            log_system(f"LLM generation failed: {e}")
+            return {
+                "answer": self._error_response(),
+                "method": "error",
+                "sources": citation_text,
+                "chunks_retrieved": len(chunks)
+            }
+        
+        # Format with citations
+        final_answer = format_answer_with_citations(answer, citation_text)
+        
+        log_system(f"RAG response generated ({len(chunks)} sources)")
+        
+        return {
+            "answer": final_answer,
+            "method": "rag",
+            "sources": citation_text,
+            "chunks_retrieved": len(chunks),
+            "pages": [c["page"] for c in chunks]
+        }
+    
+    def _web_search_answer(self, query: str) -> dict:
+        """Generate answer using web search"""
         
         try:
-            answer = self.llm.chat_completion(
-                messages=[
-                    {"role": "system", "content": self.system_prompt},
-                    {"role": "user", "content": full_prompt}
-                ],
-                temperature=0.3  # Low for medical accuracy
-            )
+            # Perform web search
+            web_result = self.web_search.search(query)
             
-            # Add medical disclaimer
-            answer += f"\n\n{MEDICAL_DISCLAIMER}"
+            if web_result.get("error"):
+                return self._error_response()
             
-            return answer
+            web_answer = web_result.get("answer", "")
+            sources = web_result.get("results", [])
+            
+            if not web_answer and not sources:
+                return self._no_web_results()
+            
+            # Format sources
+            sources_text = self._format_web_sources(sources[:3])
+            
+            # Build final answer
+            final_answer = f"""🌐 **Based on Recent Web Search Results**
+
+{web_answer}
+
+---
+ **Web Sources:**
+{sources_text}
+
+---
+⚠️ **Important Notice:**
+This information is based on web search results and represents recent findings. 
+It is for educational purposes only and does not replace professional medical advice.
+
+Always consult your healthcare provider for medical decisions, especially regarding 
+new treatments or research findings.
+"""
+            
+            log_system(f"Web search response generated ({len(sources)} sources)")
+            
+            return {
+                "answer": final_answer,
+                "method": "web_search",
+                "sources": sources_text,
+                "web_sources": sources,
+                "chunks_retrieved": 0
+            }
         
         except Exception as e:
-            print(f"❌ Error generating answer: {e}")
-            return f"I apologize, but I encountered an error processing your question. Please consult your healthcare provider directly for medical advice.\n\n{MEDICAL_DISCLAIMER}"
+            log_system(f"Web search failed: {e}")
+            return {
+                "answer": self._error_response(),
+                "method": "error",
+                "error": str(e)
+            }
     
-    def explain_treatment(self, treatment: str) -> Dict:
-        """Explain a specific treatment or medication"""
+    def _format_web_sources(self, sources: list) -> str:
+        """Format web sources list"""
+        if not sources:
+            return "No sources available"
         
-        query = f"Explain {treatment} treatment in nephrology"
-        return self.answer_medical_query(query)
+        formatted = []
+        for i, source in enumerate(sources, 1):
+            title = source.get("title", "Untitled")
+            url = source.get("url", "")
+            formatted.append(f"{i}. {title}\n   {url}")
+        
+        return "\n\n".join(formatted)
     
-    def check_symptoms(self, symptoms: str) -> Dict:
-        """Provide information about specific symptoms"""
-        
-        query = f"What do these symptoms mean in kidney disease: {symptoms}"
-        return self.answer_medical_query(query)
-    
-    def get_dietary_advice(self, diagnosis: str) -> Dict:
-        """Get dietary recommendations for diagnosis"""
-        
-        query = f"Dietary recommendations for {diagnosis}"
-        return self.answer_medical_query(query)
-    
-    def format_response_with_sources(self, response: Dict) -> str:
-        """Format response with citations"""
-        
-        formatted = response['answer']
-        
-        # Add sources section
-        if response['rag_sources']:
-            formatted += "\n\n" + "="*70
-            formatted += "\n📚 **SOURCES FROM MEDICAL TEXTBOOK:**\n"
-            
-            citations = self.rag_tool.get_citations(response['rag_sources'])
-            formatted += citations
-        
-        if response['web_sources']:
-            formatted += "\n\n" + "="*70
-            formatted += "\n🌐 **ADDITIONAL WEB SOURCES:**\n"
-            
-            for source in response['web_sources']:
-                formatted += f"- {source['title']}\n  {source['url']}\n"
-        
-        return formatted
+    def _no_context_response(self) -> dict:
+        """Response when no RAG context found"""
+        return {
+            "answer": """I apologize, but I couldn't find relevant information in the medical reference materials.
 
+⚠️ This may require:
+1. Rephrasing your question
+2. Asking about a different aspect of nephrology
+3. Consulting directly with your healthcare provider
 
-# ============================================================================
-# USAGE EXAMPLE
-# ============================================================================
+This information is for educational purposes only and does not replace professional medical advice.
+""",
+            "method": "no_context",
+            "sources": "",
+            "chunks_retrieved": 0
+        }
+    
+    def _no_web_results(self) -> dict:
+        """Response when web search returns nothing"""
+        return {
+            "answer": """I apologize, but I couldn't find recent information on this topic through web search.
 
-def test_clinical_agent():
-    """Test Clinical Agent"""
+⚠️ For the latest medical information, please consult:
+1. Your healthcare provider
+2. Medical databases like PubMed
+3. Professional medical organizations
+
+This information is for educational purposes only.
+""",
+            "method": "no_web_results",
+            "sources": "",
+            "chunks_retrieved": 0
+        }
     
-    print("="*70)
-    print("TESTING CLINICAL AGENT")
-    print("="*70)
-    
-    agent = ClinicalAgent()
-    
-    # Set patient context (simulating handoff from Receptionist)
-    patient_context = """Patient Context:
-- Name: Test Patient
-- Primary Diagnosis: Chronic Kidney Disease Stage 3
-- Current Medications: Lisinopril 10mg daily, Furosemide 20mg BID
-- Lab Values: Creatinine 2.1, eGFR 45
-- Discharge Date: 2024-10-15
-- Warning Signs: Swelling, shortness of breath, decreased urine output
+    def _error_response(self) -> str:
+        """Response when system error occurs"""
+        return """I apologize, but I encountered an error while processing your request.
+
+⚠️ For medical questions, please consult your healthcare provider directly.
+
+This information is for educational purposes only and does not replace professional medical advice.
 """
-    
-    agent.set_patient_context(patient_context)
-    
-    # Test 1: Medical query with RAG
-    print("\n📝 Test 1: Medical Query (RAG-based)")
-    print("-"*70)
-    
-    query1 = "What is chronic kidney disease and how is it managed?"
-    print(f"Query: {query1}\n")
-    
-    response1 = agent.answer_medical_query(query1)
-    
-    print(f"Used RAG: {response1['used_rag']}")
-    print(f"Used Web: {response1['used_web']}")
-    print(f"\nAnswer:\n{response1['answer'][:500]}...")
-    print(f"\nSources: {len(response1['rag_sources'])} medical references")
-    
-    # Test 2: Symptom check
-    print("\n\n📝 Test 2: Symptom Check")
-    print("-"*70)
-    
-    query2 = "I'm experiencing leg swelling. Is this related to my kidney condition?"
-    print(f"Query: {query2}\n")
-    
-    response2 = agent.check_symptoms("leg swelling")
-    
-    formatted = agent.format_response_with_sources(response2)
-    print(f"Answer:\n{formatted[:600]}...\n")
-    
-    # Test 3: Treatment explanation
-    print("\n\n📝 Test 3: Treatment Explanation")
-    print("-"*70)
-    
-    response3 = agent.explain_treatment("Lisinopril for kidney disease")
-    
-    print(f"Query: Explain Lisinopril treatment")
-    print(f"\nAnswer:\n{response3['answer'][:400]}...")
-    
-    # Test 4: Web search integration
-    print("\n\n📝 Test 4: Web Search Integration")
-    print("-"*70)
-    
-    query4 = "What are the latest SGLT2 inhibitors for kidney protection?"
-    print(f"Query: {query4}\n")
-    
-    response4 = agent.answer_medical_query(query4, use_web_search=True)
-    
-    print(f"Used RAG: {response4['used_rag']}")
-    print(f"Used Web: {response4['used_web']}")
-    print(f"Web sources found: {len(response4['web_sources'])}")
-    
-    print("\n" + "="*70)
-    print("✅ CLINICAL AGENT TESTS COMPLETE!")
-    print("="*70)
 
 
-if __name__ == "__main__":
-    try:
-        test_clinical_agent()
-    except Exception as e:
-        print(f"❌ Test failed: {e}")
-        import traceback
-        traceback.print_exc()
-
-
-
-        

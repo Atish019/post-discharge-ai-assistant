@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post-Discharge Medical AI Assistant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="app-header">
+    <div class="logo">
+        🩺 <span>MediCare AI</span>
+    </div>
+    <div class="status">
+        <span class="dot"></span> Online
+    </div>
+</header>
+
+<main class="app-wrapper">
+    <div class="chat-container">
+
+        <!-- Header -->
+        <div class="chat-header">
+            <h2>Post-Discharge Care Assistant</h2>
+            <p>Start by typing your <b>full name</b> to access your discharge report</p>
+        </div>
+
+        <!-- Messages -->
+        <div id="chat-box" class="chat-box">
+            <div class="welcome">
+                👋 <br>
+                I can help you with medications, symptoms, and latest medical research.
+            </div>
+        </div>
+
+        <!-- Typing -->
+        <div id="typing" class="typing">AI is thinking...</div>
+
+        <!-- Input -->
+        <div class="input-area">
+            <input id="user-input" placeholder="Type your message..." onkeypress="handleEnter(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+        <!-- Quick actions -->
+        <div class="quick-actions">
+            <button onclick="quick('What are my medications?')">💊 Medications</button>
+            <button onclick="quick('What symptoms should I watch for?')">🔍 Symptoms</button>
+            <button onclick="quick('Latest research on my condition')">🌐 Research</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            ⚠️ Educational use only. Always consult a healthcare professional.
+            <br>
+            <button class="new-session" onclick="newSession()">👤 Switch Patient</button>
+        </div>
+    </div>
+</main>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
